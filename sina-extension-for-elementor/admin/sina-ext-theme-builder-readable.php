@@ -51,7 +51,7 @@ class Sina_Ext_Theme_Builder{
 			wp_enqueue_style('sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/css/sina-admin-theme-builder.min.css');
 
 			wp_enqueue_script('select2', SINA_EXT_URL . 'admin/assets/js/select2.min.js', ['jquery'], SINA_EXT_VERSION, true);
-			wp_enqueue_script('sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true);
+			wp_enqueue_script('sina-ext-theme-builder', SINA_EXT_URL . 'admin/assets/js/sina-admin-theme-builder.min.js', ['jquery', 'wp-util'], SINA_EXT_VERSION, true);
 
 			$localize_data = [
 				'ajaxurl' 			=> admin_url('admin-ajax.php'),
@@ -1146,7 +1146,7 @@ class Sina_Ext_Theme_Builder{
 
 		if ( $options['check_temp_time'] < $time ) {
 			$dom = get_option('siteurl');
-			$new_url = $this->_apiurl . $dom . '&key=' . $license . '&data=checking';
+			$new_url = $this->_apiurl . $dom . '&key=' . $license . '&data=checking&version='.SINA_EXT_VERSION;
 			$data = wp_remote_get($new_url, ['timeout' => 60] );
 			$inverval_ac = 12 * 3600;
 

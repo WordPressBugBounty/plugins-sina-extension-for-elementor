@@ -113,7 +113,7 @@ class Sina_Ext_Templates_Library{
 	public static function get_template_content( $template_id ) {
 		$type = get_option('sina_ext_type');
 		$key = ('pro' == $type) ? get_option('sina_ext_pro_license_key') : get_option('sina_ext_license_key');
-		$url = sprintf(self::$api_get_template_content_url . '&type=' . $type . '&dom=' . get_option('siteurl') . '&key=' . $key, $template_id);
+		$url = sprintf(self::$api_get_template_content_url . '&type=' . $type . '&dom=' . get_option('siteurl') . '&key=' . $key. '&version=' . SINA_EXT_VERSION, $template_id);
 		$response = wp_remote_get($url, ['timeout' => 60]);
 		$data = json_decode(wp_remote_retrieve_body($response), true);
 		$response_code = (int) wp_remote_retrieve_response_code($response);
