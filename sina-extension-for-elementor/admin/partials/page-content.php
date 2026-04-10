@@ -57,6 +57,7 @@
 
 				<div class="sina-ext-options sina-ext-pb">
 					<h2><?php echo esc_html__( 'Rollback to Previous Version', 'sina-ext' ); ?></h2>
+					
 					<p>
 						<?php echo esc_html__( 'Experiencing an issue with this version? You can rollback the previous version.', 'sina-ext' ); ?>
 					</p>
