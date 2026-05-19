@@ -801,9 +801,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				[
 					'label' => esc_html__( 'Primary Button', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
-					'condition' => [
-						'pbtn_text!' => '',
-					],
 				]
 			);
 			Sina_Common_Data::button_style( $this, '.sina-banner-pbtn', 'pbtn' );
@@ -895,9 +892,6 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				[
 					'label' => esc_html__( 'Secondary Button', 'sina-ext' ),
 					'tab' => Controls_Manager::TAB_STYLE,
-					'condition' => [
-						'sbtn_text!' => '',
-					],
 				]
 			);
 			Sina_Common_Data::button_style( $this, '.sina-banner-sbtn', 'sbtn' );

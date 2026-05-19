@@ -2112,21 +2112,7 @@ class Sina_Blogpost_Widget extends Widget_Base{
 	protected function render_editor_script() {
 		?>
 		<script type="text/javascript">
-		jQuery( document ).ready(function( $ ) {
-			var sinaBPClass = '.sina-bp-'+'<?php echo $this->get_id(); ?>',
-				$this = $(sinaBPClass),
-				$isoGrid = $this.children('.sina-bp-grid');
-
-			$this.imagesLoaded( function() {
-				$isoGrid.isotope({
-					itemSelector: '.sina-bp-col',
-					percentPosition: true,
-					masonry: {
-						columnWidth: '.sina-bp-grid-sizer',
-					}
-				});
-			});
-		});
+			!function(){var e=jQuery(".sina-bp-<?php echo $this->get_id(); ?>"),i=e.children(".sina-bp-grid");e.length&&i.children(".sina-bp-col").removeAttr("style")}();
 		</script>
 		<?php
 	}

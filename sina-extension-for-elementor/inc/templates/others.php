@@ -1,7 +1,6 @@
 <?php
 /**
  * Archive Template.
- *
  */
 
 // Exit if accessed directly.

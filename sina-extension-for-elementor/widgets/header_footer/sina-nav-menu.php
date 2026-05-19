@@ -65,6 +65,19 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 	}
 
 	/**
+	 * Get widget styles.
+	 *
+	 * Retrieve the list of styles the widget belongs to.
+	 *
+	 * @since 3.7.0
+	 */
+	public function get_style_depends() {
+		return [
+			'animate-merge',
+		];
+	}
+
+	/**
 	 * Get widget scripts.
 	 *
 	 * Retrieve the list of scripts the widget belongs to.
@@ -707,7 +720,7 @@ class Sina_Nav_Menu_Widget extends Widget_Base{
 
 
 	protected function render() {
-		$data 			= $this->get_settings_for_display();
+		$data = $this->get_settings_for_display();
 		$uid = $this->get_id();
 		$anim = [
 			'fadeInLeft',

@@ -1027,21 +1027,7 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 	protected function render_editor_script() {
 		?>
 		<script type="text/javascript">
-		jQuery( document ).ready(function( $ ) {
-			var sinaFeedClass = '.sina-twitter-feed-'+'<?php echo $this->get_id(); ?>',
-				$this = $(sinaFeedClass),
-				$isoGrid = $this.children('.sina-feed-grid');
-
-			$this.imagesLoaded( function() {
-				$isoGrid.isotope({
-					itemSelector: '.sina-feed-col',
-					percentPosition: true,
-					masonry: {
-						columnWidth: '.sina-twitter-feed-grid-sizer',
-					}
-				});
-			});
-		});
+			!function(){var e=jQuery(".sina-twitter-feed-<?php echo $this->get_id(); ?>"),i=e.children(".sina-feed-grid");e.length&&i.children(".sina-feed-col").removeAttr("style")}();
 		</script>
 		<?php
 	}

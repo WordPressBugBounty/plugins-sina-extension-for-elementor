@@ -1,7 +1,6 @@
 <?php
 /**
  * Header Template
- *
  */
 
 // Exit if accessed directly.

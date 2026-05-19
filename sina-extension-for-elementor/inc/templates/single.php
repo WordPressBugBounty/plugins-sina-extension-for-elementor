@@ -1,7 +1,6 @@
 <?php
 /**
  * Single Template.
- *
  */
 
 // Exit if accessed directly.

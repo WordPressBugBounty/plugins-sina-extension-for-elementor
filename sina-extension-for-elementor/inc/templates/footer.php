@@ -1,7 +1,6 @@
 <?php
 /**
  * Footer Template
- *
  */
 
 // Exit if accessed directly.

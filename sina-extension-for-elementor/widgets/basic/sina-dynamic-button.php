@@ -247,7 +247,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'CSS ID', 'sina-ext' ),
 				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter ID', 'sina-ext' ),
+				'placeholder' => esc_html__( 'Enter CSS ID', 'sina-ext' ),
 				'description' => esc_html__( 'Make sure this ID unique', 'sina-ext' ),
 				'condition' => [
 					'btn_type' => 'static',

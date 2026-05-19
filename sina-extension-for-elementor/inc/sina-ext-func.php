@@ -55,13 +55,13 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 		$ajax_url = admin_url('admin-ajax.php');
 
 		wp_register_script( 'imagesLoaded', SINA_EXT_URL .'assets/js/imagesloaded.pkgd.min.js', ['jquery'], SINA_EXT_VERSION, true );
+		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded'], SINA_EXT_VERSION, true );
 		wp_register_script( 'typed', SINA_EXT_URL .'assets/js/typed.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-owl', SINA_EXT_URL .'assets/js/owl.carousel.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-particle', SINA_EXT_URL .'assets/js/sina-particles.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'venobox', SINA_EXT_URL .'assets/js/venobox.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'countdown', SINA_EXT_URL .'assets/js/jquery.countdown.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'easypiechart', SINA_EXT_URL .'assets/js/jquery.easypiechart.min.js', ['jquery'], SINA_EXT_VERSION, true );
-		wp_register_script( 'isotope', SINA_EXT_URL .'assets/js/isotope.min.js', ['jquery', 'imagesLoaded'], SINA_EXT_VERSION, true );
 		wp_register_script( 'xzoom', SINA_EXT_URL .'assets/js/xzoom.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-event-move', SINA_EXT_URL .'assets/js/jquery.event.move.min.js', ['jquery'], SINA_EXT_VERSION, true );
 		wp_register_script( 'jquery-twentytwenty', SINA_EXT_URL .'assets/js/jquery.twentytwenty.min.js', ['jquery'], SINA_EXT_VERSION, true );
@@ -219,7 +219,7 @@ abstract class Sina_Ext_Functions extends Sina_Extension_Base{
 	 * @since 3.7.1
 	 */
 	public static function modules() {
-		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
 		require_once( SINA_EXT_ADMIN .'sina-ext-theme-builder.php' );
+		require_once( SINA_EXT_ADMIN .'sina-ext-templates.php' );
 	}
 }
