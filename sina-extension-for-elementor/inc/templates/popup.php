@@ -26,7 +26,7 @@ $elementor_instance = \Elementor\Plugin::$instance;
 	<div id="sina-ext-popup-<?php the_ID() ?>" class="sina-ext-popup sina-ext-popup-show">
 		<div class="sina-ext-popup-overlay"></div>
 		<div class="sina-ext-popup-inner animated">
-			<div class="sina-ext-popup-close-btn"><i class="eicon-close"></i></div>
+			<div class="sina-ext-popup-close-btn"><i class="icofont icofont-close"></i></div>
 			<div class="sina-ext-popup-content">
 				<?php $elementor_instance->modules_manager->get_modules( 'page-templates' )->print_content(); ?>
 			</div>

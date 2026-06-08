@@ -78,6 +78,7 @@ class Sina_Facebook_Feed_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'font-awesome',
 			'sina-widgets',
 		];
 	}

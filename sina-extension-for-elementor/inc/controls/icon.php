@@ -3464,7 +3464,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 		?>
 		<div class="elementor-control-field">
 			<label for="<?php echo $control_uid; ?>" class="elementor-control-title">{{{ data.label }}}</label>
-			<div class="elementor-control-input-wrapper">
+			<div class="elementor-control-input-wrapper sina-ext-icon-field">
 				<select id="<?php echo $control_uid; ?>" class="elementor-control-icon" data-setting="{{ data.name }}" data-placeholder="<?php echo __( 'Select Icon', 'sina-ext' ); ?>">
 					<option value=""><?php echo __( 'Select Icon', 'sina-ext' ); ?></option>
 					<# if( data.include ) { #>
@@ -3476,6 +3476,7 @@ class Sina_Ext_Icon extends Base_Data_Control{
 							<option value="{{ option_value }}">{{{ option_title }}}</option>
 						<# } ); #>
 					<# } #>
+						<span class="sina-icon-reset" style="cursor:pointer;" title="Reset">&#x2715;</span>
 				</select>
 			</div>
 		</div>

@@ -64,6 +64,20 @@ class Sina_Direct_Contact_Widget extends Widget_Base{
 		return [ 'sina direct contact', 'sina contact', 'sina phone', 'sina email', 'sina header', 'sina footer' ];
 	}
 
+	/**
+	 * Get widget styles.
+	 *
+	 * Retrieve the list of styles the widget belongs to.
+	 *
+	 * @since 3.7.0
+	 */
+	public function get_style_depends() {
+		return [
+			'font-awesome',
+			'elementor-icons',
+		];
+	}
+
 	public function get_icon_list() {
 		return [
 			'fa fa-phone' => 'phone',

@@ -5,12 +5,11 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
 
 do_action( 'sina_ext_footer_builder_content' );
+wp_footer();
 ?>
-</div><!-- #page -->
-<?php wp_footer(); ?>
 </body>
 </html>

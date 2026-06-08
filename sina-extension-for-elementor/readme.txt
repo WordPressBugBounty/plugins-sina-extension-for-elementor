@@ -1,20 +1,19 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
 Tags: elementor addon, elementor addons, elementor extension, elementor widget, elementor templates
-Donate link: https://sina-extension.sinaextra.com/
 Requires at least: 4.8
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.9.0
+Stable tag: 3.10.0
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of high-quality features including Header, Footer and Theme Builder. 58 Custom elements with 100+ ready templates and more.
+A collection of high-quality features including Header Builder, Footer Builder, Popup Builder, Sidebar Builder and Theme Builder. 58 Elements with 100+ ready templates and more.
 
 
 == Description ==
 
-This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend Elementor by the Header, Footer, Popup & Theme Builder features with 58 custom widgets in detailed editing ability. So Elementor users can create Header, Footer, Popup, Single page, Archive page, Search page, 404 page and Front page templates more dynamically just in drag & drop.
+This is an extension or addon for [Elementor](https://wordpress.org/plugins/elementor/) page builder. It will extend Elementor by the Header Builder, Footer Builder, Popup Builder, Sidebar Builder, Theme Builder and Shortcode Generator features. Also it has 58 custom widgets with detailed editing ability. So Elementor users can create Header, Footer, Popup, Sidebar, Single page, Archive page, Search page, 404 page and Front page templates more dynamically just in drag & drop.
 So Sina Extension will increase the web page building experience and you can use it to easily & fast make the web pages & display your content far better way.
 
 
@@ -27,7 +26,9 @@ https://youtu.be/x8sZyLEBoks
 * Header Builder.
 * Footer Builder.
 * Popup Builder.
+* Sidebar Builder.
 * Theme Builder.
+* Shortcode Generator.
 * 58 free elements.
 * 100+ Fully Responsive predefined [Blocks & Pages](https://sina-extension.sinaextra.com/sina-templates/).
 * Options panel for enable/disable elements.
@@ -256,6 +257,14 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 
 == Changelog ==
 
+= 3.10.0 - 04-08-2026 =
+- New: Sidebar Builder Feature
+- New: Shortcode Generator Feature
+- Fixed: Templates settings issue
+- Fixed: Icons issue
+- Fixed: Themes support issue
+- Improved
+
 = 3.9.0 - 19-05-2026 =
 - New: Popup Builder Feature
 - Fixed: Banner Slider button style issue
@@ -265,7 +274,6 @@ Yes. It's totally free. We also have a [PRO](https://sina-extension.sinaextra.co
 - Fixed: Blogpost editor initialize issue
 - Fixed: Facebook Feed editor initialize issue
 - Fixed: Twitter Feed editor initialize issue
-
 
 = 3.8.2 - 22-04-2026 =
 - Fixed: Elementor Compatibility issue

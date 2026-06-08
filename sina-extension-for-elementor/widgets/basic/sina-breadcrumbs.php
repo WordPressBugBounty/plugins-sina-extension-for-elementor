@@ -73,6 +73,8 @@ class Sina_Breadcrumbs_Widget extends Widget_Base{
 	 */
 	public function get_style_depends() {
 		return [
+			'font-awesome',
+			'elementor-icons',
 			'sina-widgets',
 		];
 	}

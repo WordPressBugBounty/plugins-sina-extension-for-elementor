@@ -229,6 +229,14 @@ class Sina_Ext_Settings{
 		);
 		add_submenu_page(
 			'sina_ext',
+			esc_html__( 'Sidebar', 'sina-ext' ),
+			esc_html__( 'Sidebar', 'sina-ext' ),
+			'manage_options',
+			'edit.php?post_type=sina-ext-template&template_type=sidebar',
+			null
+		);
+		add_submenu_page(
+			'sina_ext',
 			esc_html__('Our Plugins', 'sina-ext'),
 			'<span style="color:#0e0">'.esc_html__('Our Plugins', 'sina-ext').'</span>',
 			'manage_options',

@@ -66,6 +66,19 @@ class Sina_Woo_Cart_Widget extends Widget_Base{
 	}
 
 	/**
+	 * Get widget styles.
+	 *
+	 * Retrieve the list of styles the widget belongs to.
+	 *
+	 * @since 3.7.0
+	 */
+	public function get_style_depends() {
+		return [
+			'elementor-icons',
+		];
+	}
+
+	/**
 	 * Register widget controls.
 	 *
 	 * Adds different input fields to allow the user to change and customize the widget settings.

@@ -340,6 +340,30 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'sina-ext' ),
+						'icon' => 'eicon-h-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'sina-ext' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .sina-dynamic-button' => 'text-align: {{VALUE}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'text_align',
+			[
+				'label' => esc_html__( 'Text Align', 'sina-ext' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'sina-ext' ),
 						'icon' => 'eicon-text-align-left',
 					],
 					'center' => [
@@ -352,7 +376,7 @@ class Sina_Dynamic_Button_Widget extends Widget_Base{
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .sina-dynamic-button' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} .sina-dynamic-btn' => 'text-align: {{VALUE}};',
 				],
 			]
 		);

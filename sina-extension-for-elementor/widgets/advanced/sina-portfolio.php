@@ -79,6 +79,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 	public function get_style_depends() {
 		return [
 			'venobox',
+			'font-awesome',
 			'sina-widgets',
 		];
 	}

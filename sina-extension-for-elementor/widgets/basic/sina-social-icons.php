@@ -188,7 +188,7 @@ class Sina_Social_Icons_Widget extends Widget_Base{
 				'label' => esc_html__( 'Icon Color', 'sina-ext' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .sina-social {{CURRENT_ITEM}} a:hover i' => 'color: {{VALUE}};',
 				],
 			]
 		);

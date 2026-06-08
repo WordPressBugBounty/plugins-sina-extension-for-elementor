@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 ?>
-<main id="content" <?php post_class( 'site-main' ); ?>>
+<div <?php post_class(); ?>>
 	<?php do_action( 'sina_ext_single_builder_content' ); ?>
-</main>
+</div>
 <?php
 get_footer();
 

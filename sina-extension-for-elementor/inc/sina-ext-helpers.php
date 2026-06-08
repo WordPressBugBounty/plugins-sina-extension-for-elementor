@@ -232,3 +232,73 @@ function sina_get_templates_data($id, $frontend){
 		return $frontend->get_builder_content( $id, true );
 	}
 }
+
+
+function sina_get_the_popup_settings($template_id) {
+	$settings = get_post_meta( $template_id, '_elementor_page_settings', true );
+	$defaults = [
+		'popup_trigger' => 'load',
+		'popup_load_delay' => 1,
+		'popup_date' => date( 'Y-m-d H:i', strtotime( '+1 day' ) + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) ),
+		'popup_scroll_distance' => 10,
+		'popup_scroll_element' => '',
+		'popup_inactivity_time' => 20,
+		'popup_custom_trigger' => '',
+		'popup_show_again' => 1,
+		'popup_show_seconds' => 30,
+		'popup_show_minutes' => 15,
+		'popup_show_hours' => 6,
+		'popup_show_days' => 15,
+		'popup_show_months' => 1,
+		'close_esc' => 'yes',
+		'close_element' => 'default',
+		'close_element_selector' => '',
+		'popup_anim_in' => 'slideInDown',
+		'popup_anim_out' => 'slideOutUp',
+	];
+
+	if ( empty( $settings ) || !is_array( $settings ) ) {
+		return $defaults;
+	}
+
+	$new_settings = $defaults;
+
+	foreach ( $defaults as $key => $val ) {
+		if ( isset( $settings[ $key ] ) ) {
+			$new_settings[ $key ] = $settings[ $key ];
+		}
+	}
+
+	return $new_settings;
+}
+
+function sina_get_the_sidebar_settings($template_id) {
+	$settings = get_post_meta( $template_id, '_elementor_page_settings', true );
+	$defaults = [
+		'sidebar_toggle' => 'yes',
+		'sidebar_close_esc' => 'yes',
+		'sidebar_toggle_open_icon' => '',
+		'sidebar_toggle_close_icon' => '',
+		'sidebar_toggle_open_text' => '',
+		'sidebar_toggle_close_text' => '',
+		'sidebar_trigger' => 'none',
+		'sidebar_custom_trigger' => '',
+		'close_element' => 'none',
+		'close_element_selector' => '',
+		'sidebar_position' => 'right',
+	];
+
+	if ( empty( $settings ) || !is_array( $settings ) ) {
+		return $defaults;
+	}
+
+	$new_settings = $defaults;
+
+	foreach ( $defaults as $key => $val ) {
+		if ( isset( $settings[ $key ] ) ) {
+			$new_settings[ $key ] = $settings[ $key ];
+		}
+	}
+
+	return $new_settings;
+}

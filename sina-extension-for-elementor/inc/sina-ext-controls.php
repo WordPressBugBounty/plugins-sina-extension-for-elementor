@@ -2684,7 +2684,7 @@ class Sina_Common_Data{
 						'default' => 'fadeOutUp',
 					]
 				);
-				$obj->add_responsive_control(
+				$obj->add_control(
 					$prefix.'_hr_align',
 					[
 						'label' => esc_html__( 'Horizontal Align', 'sina-ext' ),
@@ -2710,7 +2710,7 @@ class Sina_Common_Data{
 						],
 					]
 				);
-				$obj->add_responsive_control(
+				$obj->add_control(
 					$prefix.'_vr_align',
 					[
 						'label' => esc_html__( 'Vertical Align', 'sina-ext' ),
@@ -2854,6 +2854,350 @@ class Sina_Common_Data{
 			$obj->end_controls_section();
 		// End Popup Style
 		// ================
+	}
+
+	public static function sidebar_style( $obj, $prefix = 'sidebar' ) {
+		$selector_sidebar		= '{{WRAPPER}}';
+		$selector_sidebar_pos	= '{{WRAPPER}}.sina-ext-sidebar';
+		$selector_inner			= '{{WRAPPER}} .sina-ext-sidebar-inner';
+		$selector_content		= '{{WRAPPER}} .sina-ext-sidebar-content';
+
+		// Start Sidebar Style
+		// ====================
+			$obj->start_controls_section(
+				$prefix.'_style',
+				[
+					'label' => esc_html__( 'Sidebar', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+
+				$obj->add_control(
+					$prefix.'_position',
+					[
+						'label' => esc_html__( 'Position', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'up' => [
+								'title' => esc_html__( 'Top', 'sina-ext' ),
+								'icon' => 'eicon-v-align-top',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-h-align-right',
+							],
+							'down' => [
+								'title' => esc_html__( 'Bottom', 'sina-ext' ),
+								'icon' => 'eicon-v-align-bottom',
+							],
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-h-align-left',
+							],
+						],
+						'toggle' => false,
+						'default' => 'right',
+					]
+				);
+				$obj->add_control(
+					$prefix.'_hr_align',
+					[
+						'label' => esc_html__( 'Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'flex-start' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-h-align-center',
+							],
+							'flex-end' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'toggle' => false,
+						'default' => 'center',
+						'condition' => [
+							$prefix.'_position' => ['up','down'],
+						],
+						'selectors' => [
+							$selector_sidebar => 'justify-content: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_control(
+					$prefix.'_vr_align',
+					[
+						'label' => esc_html__( 'Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'flex-start' => [
+								'title' => esc_html__( 'Top', 'sina-ext' ),
+								'icon' => 'eicon-v-align-top',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-v-align-middle',
+							],
+							'flex-end' => [
+								'title' => esc_html__( 'Bottom', 'sina-ext' ),
+								'icon' => 'eicon-v-align-bottom',
+							],
+						],
+						'toggle' => false,
+						'default' => 'center',
+						'condition' => [
+							$prefix.'_position' => ['left','right'],
+						],
+						'selectors' => [
+							$selector_sidebar => 'align-items: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_responsive_control(
+					$prefix.'_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 2000,
+							],
+							'em' => [
+								'max' => 200,
+							],
+						],
+						'default' => [
+							'unit' => 'px',
+							'size' => 340,
+						],
+						'selectors' => [
+							$selector_inner => 'width: {{SIZE}}{{UNIT}};',
+							$selector_sidebar_pos.'-right' => 'right: -{{SIZE}}{{UNIT}};',
+							$selector_sidebar_pos.'-left' => 'left: -{{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$obj->add_responsive_control(
+					$prefix.'_height',
+					[
+						'label' => esc_html__( 'Height', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 100,
+							],
+						],
+						'default' => [
+							'unit' => '%',
+							'size' => 100,
+						],
+						'selectors' => [
+							$selector_inner => 'height: {{SIZE}}{{UNIT}};',
+							$selector_sidebar_pos.'-up' => 'top: -{{SIZE}}{{UNIT}};',
+							'.admin-bar '.$selector_sidebar_pos.'-up' => 'top: calc(-{{SIZE}}{{UNIT}} + 32px);',
+							$selector_sidebar_pos.'-down' => 'bottom: -{{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Background::get_type(),
+					[
+						'name' => $prefix.'_bg',
+						'types' => [ 'classic', 'gradient' ],
+						'selector' => $selector_content,
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Box_Shadow::get_type(),
+					[
+						'name' => $prefix.'_shadow',
+						'selector' => $selector_content,
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Border::get_type(),
+					[
+						'name' => $prefix.'_border',
+						'selector' => $selector_content,
+					]
+				);
+				$obj->add_responsive_control(
+					$prefix.'_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'selectors' => [
+							$selector_content => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$obj->add_responsive_control(
+					$prefix.'_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'selectors' => [
+							$selector_content => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+
+			$obj->end_controls_section();
+		// End Sidebar Style
+		// ==================
+	}
+
+	public static function sidebar_toggle_style( $obj, $selector = '', $prefix = 'toggle_btn_text') {
+		$obj->add_responsive_control(
+			$prefix.'_width',
+			[
+				'label' => esc_html__( 'Width', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					$selector => 'width: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_height',
+			[
+				'label' => esc_html__( 'Height', 'sina-ext' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em', '%' ],
+				'range' => [
+					'px' => [
+						'max' => 200,
+					],
+				],
+				'selectors' => [
+					$selector => 'height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_responsive_control(
+			$prefix.'_radius',
+			[
+				'label' => esc_html__( 'Radius', 'sina-ext' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors' => [
+					$selector => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$obj->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => $prefix.'_typography',
+				'selector' => $selector,
+			]
+		);
+
+		$obj->start_controls_tabs( $prefix.'_tabs' );
+			$obj->start_controls_tab(
+				$prefix.'_normal',
+				[
+					'label' => esc_html__( 'Normal', 'sina-ext' ),
+				]
+			);
+				$obj->add_control(
+					$prefix.'_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							$selector => 'color: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_control(
+					$prefix.'_bg',
+					[
+						'label' => esc_html__( 'Background Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							$selector => 'background-color: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Box_Shadow::get_type(),
+					[
+						'name' => $prefix.'_shadow',
+						'selector' => $selector,
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Border::get_type(),
+					[
+						'name' => $prefix.'_border',
+						'selector' => $selector,
+					]
+				);
+			$obj->end_controls_tab();
+
+			$obj->start_controls_tab(
+				$prefix.'_hover',
+				[
+					'label' => esc_html__( 'Hover', 'sina-ext' ),
+				]
+			);
+				$obj->add_control(
+					$prefix.'_hover_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							$selector.':hover' => 'color: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_control(
+					$prefix.'_hover_bg',
+					[
+						'label' => esc_html__( 'Background Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							$selector.':hover' => 'background-color: {{VALUE}};',
+						],
+					]
+				);
+				$obj->add_group_control(
+					Group_Control_Box_Shadow::get_type(),
+					[
+						'name' => $prefix.'_hover_shadow',
+						'selector' => $selector.':hover',
+					]
+				);
+				$obj->add_control(
+					$prefix.'_hover_border',
+					[
+						'label' => esc_html__( 'Border Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'selectors' => [
+							$selector.':hover' => 'border-color: {{VALUE}};',
+						],
+					]
+				);
+			$obj->end_controls_tab();
+		$obj->end_controls_tabs();
 	}
 
 	public static function widget_show_in_panel($place = ['single']) {

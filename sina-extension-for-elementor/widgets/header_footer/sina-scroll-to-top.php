@@ -65,6 +65,20 @@ class Sina_Scroll_To_Top_Widget extends Widget_Base{
 	}
 
 	/**
+	 * Get widget styles.
+	 *
+	 * Retrieve the list of styles the widget belongs to.
+	 *
+	 * @since 3.7.0
+	 */
+	public function get_style_depends() {
+		return [
+			'font-awesome',
+			'elementor-icons',
+		];
+	}
+
+	/**
 	 * Get widget scripts.
 	 *
 	 * Retrieve the list of scripts the widget belongs to.
