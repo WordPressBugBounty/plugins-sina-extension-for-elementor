@@ -1,4 +1,4 @@
-<div class="sina-ext-banner" style="background-image: url(<?php echo esc_url( SINA_EXT_URL .'admin/assets/img/sina-extension-banner.jpg' ); ?>);">
+<div class="sina-ext-banner">
 	<h1><?php echo esc_html__('Sina Extension', 'sina-ext' ); ?></h1>
 </div>
 

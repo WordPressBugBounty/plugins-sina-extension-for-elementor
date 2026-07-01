@@ -111,817 +111,850 @@ class Sina_Twitter_Feed_Widget extends Widget_Base{
 	protected function register_controls() {
 		// Start Feed Content
 		// ===================
-		$this->start_controls_section(
-			'feed_content',
-			[
-				'label' => esc_html__( 'Feed Content', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
+			$this->start_controls_section(
+				'feed_content',
+				[
+					'label' => esc_html__( 'Feed Content', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_CONTENT,
+				]
+			);
 
-		$this->add_control(
-			'account_name',
-			[
-				'label' => esc_html__( 'Account Name', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter account name', 'sina-ext' ),
-				'description' => esc_html__('Use @ in front of your account name.', 'sina-ext'),
-				'default' => '@Sina_Extra',
-			]
-		);
-		$this->add_control(
-			'consumer_key',
-			[
-				'label' => esc_html__( 'Consumer Key', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter consumer key', 'sina-ext' ),
-				'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Key', 'sina-ext').'</a>',
-			]
-		);
-		$this->add_control(
-			'consumer_secret_key',
-			[
-				'label' => esc_html__( 'Consumer Secret Key', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter consumer secret key', 'sina-ext' ),
-				'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Secret Key', 'sina-ext').'</a>',
-			]
-		);
-		$this->add_control(
-			'feeds_num',
-			[
-				'label' => esc_html__( 'Number of Feed', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 1,
-				'max' => 50,
-				'default' => 3,
-			]
-		);
-		$this->add_control(
-			'feeds_offset',
-			[
-				'label' => esc_html__( 'Number of Offset', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 0,
-				'max' => 50,
-				'default' => 0,
-			]
-		);
-		$this->add_control(
-			'content_length',
-			[
-				'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
-				'type' => Controls_Manager::NUMBER,
-				'step' => 1,
-				'min' => 0,
-				'max' => 2000,
-				'default' => 15,
-			]
-		);
-		$this->add_control(
-			'columns',
-			[
-				'label' => esc_html__( 'Number of Column', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'1' => esc_html__( '1', 'sina-ext' ),
-					'2' => esc_html__( '2', 'sina-ext' ),
-					'3' => esc_html__( '3', 'sina-ext' ),
-					'4' => esc_html__( '4', 'sina-ext' ),
-				],
-				'default' => '3',
-			]
-		);
-		$this->add_control(
-			'sort_by',
-			[
-				'label' => esc_html__( 'Sort By', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'newest' => esc_html__( 'Newest', 'sina-ext' ),
-					'oldest' => esc_html__( 'Oldest', 'sina-ext' ),
-				],
-				'default' => 'newest',
-			]
-		);
+				$this->add_control(
+					'account_name',
+					[
+						'label' => esc_html__( 'Account Name', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter account name', 'sina-ext' ),
+						'description' => esc_html__('Use @ in front of your account name.', 'sina-ext'),
+						'default' => '@Sina_Extra',
+					]
+				);
+				$this->add_control(
+					'consumer_key',
+					[
+						'label' => esc_html__( 'Consumer Key', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter consumer key', 'sina-ext' ),
+						'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Key', 'sina-ext').'</a>',
+					]
+				);
+				$this->add_control(
+					'consumer_secret_key',
+					[
+						'label' => esc_html__( 'Consumer Secret Key', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter consumer secret key', 'sina-ext' ),
+						'description' => '<a href="https://apps.twitter.com/app/" target="_blank">'.esc_html__('Get Consumer Secret Key', 'sina-ext').'</a>',
+					]
+				);
+				$this->add_control(
+					'feeds_num',
+					[
+						'label' => esc_html__( 'Number of Feed', 'sina-ext' ),
+						'type' => Controls_Manager::NUMBER,
+						'step' => 1,
+						'min' => 1,
+						'max' => 50,
+						'default' => 3,
+					]
+				);
+				$this->add_control(
+					'feeds_offset',
+					[
+						'label' => esc_html__( 'Number of Offset', 'sina-ext' ),
+						'type' => Controls_Manager::NUMBER,
+						'step' => 1,
+						'min' => 0,
+						'max' => 50,
+						'default' => 0,
+					]
+				);
+				$this->add_control(
+					'content_length',
+					[
+						'label' => esc_html__( 'Content Length (Word)', 'sina-ext' ),
+						'type' => Controls_Manager::NUMBER,
+						'step' => 1,
+						'min' => 0,
+						'max' => 2000,
+						'default' => 15,
+					]
+				);
+				$this->add_control(
+					'columns',
+					[
+						'label' => esc_html__( 'Number of Column', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'1' => esc_html__( '1', 'sina-ext' ),
+							'2' => esc_html__( '2', 'sina-ext' ),
+							'3' => esc_html__( '3', 'sina-ext' ),
+							'4' => esc_html__( '4', 'sina-ext' ),
+						],
+						'default' => '3',
+					]
+				);
+				$this->add_control(
+					'sort_by',
+					[
+						'label' => esc_html__( 'Sort By', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'newest' => esc_html__( 'Newest', 'sina-ext' ),
+							'oldest' => esc_html__( 'Oldest', 'sina-ext' ),
+						],
+						'default' => 'newest',
+					]
+				);
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Feed Content
 		// =================
 
 
 		// Start Read More Content
 		// ========================
-		$this->start_controls_section(
-			'read_more_content',
-			[
-				'label' => esc_html__( 'Read More', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
-		Sina_Common_Data::button_content( $this, '.sina-read-more', 'Read More', 'read_more', false);
+			$this->start_controls_section(
+				'read_more_content',
+				[
+					'label' => esc_html__( 'Read More', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_CONTENT,
+				]
+			);
+			Sina_Common_Data::button_content( $this, '.sina-read-more', 'Read More', 'read_more', false);
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Read More Content
 		// ======================
 
 
 		// Start Feed Style
 		// =====================
-		$this->start_controls_section(
-			'box_style',
-			[
-				'label' => esc_html__( 'Feed', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
+			$this->start_controls_section(
+				'box_style',
+				[
+					'label' => esc_html__( 'Feed', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
 
-		$this->add_control(
-			'note',
-			[
-				'type' => Controls_Manager::RAW_HTML,
-				'raw' => __( 'NOTICE: If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result.', 'sina-ext' ),
-				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
-			]
-		);
-		$this->add_control(
-			'effects',
-			[
-				'label' => esc_html__( 'Effects', 'sina-ext' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'sina-hover-move' => esc_html__( 'Move', 'sina-ext' ),
-					'sina-hover-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
-					'' => esc_html__( 'None', 'sina-ext' ),
-				],
-				'default' => '',
-			]
-		);
-		$this->add_responsive_control(
-			'scale',
-			[
-				'label' => esc_html__( 'Scale', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'step' => 0.1,
-						'min' => 0.1,
-						'max' => 5,
-					],
-				],
-				'default' => [
-					'size' => '1.05',
-				],
-				'condition' => [
-					'effects' => 'sina-hover-zoom',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed.sina-hover-zoom:hover' => 'transform: scale({{SIZE}});',
-				],
-			]
-		);
-		$this->add_control(
-			'move',
-			[
-				'label' => esc_html__( 'Move', 'sina-ext' ),
-				'type' => Controls_Manager::POPOVER_TOGGLE,
-				'condition' => [
-					'effects' => 'sina-hover-move',
-				],
-			]
-		);
-
-		$this->start_popover();
-		$this->add_responsive_control(
-			'translateX',
-			[
-				'label' => esc_html__( 'Horizontal', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'step' => 1,
-						'min' => -100,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'size' => '0',
-				],
-				'tablet_default' => [
-					'size' => '0',
-				],
-				'mobile_default' => [
-					'size' => '0',
-				],
-				'condition' => [
-					'effects' => 'sina-hover-move',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'translateY',
-			[
-				'label' => esc_html__( 'Vertical', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'step' => 1,
-						'min' => -100,
-						'max' => 100,
-					],
-				],
-				'default' => [
-					'size' => '-10',
-				],
-				'tablet_default' => [
-					'size' => '-10',
-				],
-				'mobile_default' => [
-					'size' => '-10',
-				],
-				'condition' => [
-					'effects' => 'sina-hover-move',
-				],
-				'selectors' => [
-					'(desktop){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
-					'(tablet){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
-					'(mobile){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
-				],
-			]
-		);
-		$this->end_popover();
-
-
-		$this->start_controls_tabs( 'feed_tabs' );
-
-		$this->start_controls_tab(
-			'feed_normal',
-			[
-				'label' => esc_html__( 'Normal', 'sina-ext' ),
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'background',
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-feed',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'box_shadow',
-				'selector' => '{{WRAPPER}} .sina-feed',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'box_border',
-				'fields_options' => [
-					'border' => [
-						'default' => 'solid',
-					],
-					'color' => [
-						'default' => '#fafafa',
-					],
-					'width' => [
+				$this->add_control(
+					'note',
+					[
+						'type' => Controls_Manager::RAW_HTML,
+						'raw' => __( 'NOTICE: If you change the <strong>Dimension</strong> then the page need to <strong>Refresh</strong> for seeing the actual result.', 'sina-ext' ),
+						'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+					]
+				);
+				$this->add_control(
+					'effects',
+					[
+						'label' => esc_html__( 'Effects', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'sina-hover-move' => esc_html__( 'Move', 'sina-ext' ),
+							'sina-hover-zoom' => esc_html__( 'Zoom', 'sina-ext' ),
+							'' => esc_html__( 'None', 'sina-ext' ),
+						],
+						'default' => '',
+					]
+				);
+				$this->add_responsive_control(
+					'scale',
+					[
+						'label' => esc_html__( 'Scale', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'range' => [
+							'px' => [
+								'step' => 0.1,
+								'min' => 0.1,
+								'max' => 5,
+							],
+						],
 						'default' => [
-							'top' => '1',
-							'right' => '1',
-							'bottom' => '1',
-							'left' => '1',
-							'isLinked' => true,
+							'size' => '1.05',
+						],
+						'condition' => [
+							'effects' => 'sina-hover-zoom',
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed.sina-hover-zoom:hover' => 'transform: scale({{SIZE}});',
+						],
+					]
+				);
+				$this->add_control(
+					'move',
+					[
+						'label' => esc_html__( 'Move', 'sina-ext' ),
+						'type' => Controls_Manager::POPOVER_TOGGLE,
+						'condition' => [
+							'effects' => 'sina-hover-move',
+						],
+					]
+				);
+
+				$this->start_popover();
+				$this->add_responsive_control(
+					'translateX',
+					[
+						'label' => esc_html__( 'Horizontal', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'range' => [
+							'px' => [
+								'step' => 1,
+								'min' => -100,
+								'max' => 100,
+							],
+						],
+						'default' => [
+							'size' => '0',
+						],
+						'tablet_default' => [
+							'size' => '0',
+						],
+						'mobile_default' => [
+							'size' => '0',
+						],
+						'condition' => [
+							'effects' => 'sina-hover-move',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'translateY',
+					[
+						'label' => esc_html__( 'Vertical', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'range' => [
+							'px' => [
+								'step' => 1,
+								'min' => -100,
+								'max' => 100,
+							],
+						],
+						'default' => [
+							'size' => '-10',
+						],
+						'tablet_default' => [
+							'size' => '-10',
+						],
+						'mobile_default' => [
+							'size' => '-10',
+						],
+						'condition' => [
+							'effects' => 'sina-hover-move',
+						],
+						'selectors' => [
+							'(desktop){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX.SIZE || 0}}px, {{translateY.SIZE || 0}}px);',
+							'(tablet){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_tablet.SIZE || 0}}px, {{translateY_tablet.SIZE || 0}}px);',
+							'(mobile){{WRAPPER}} .sina-feed:hover' => 'transform: translate({{translateX_mobile.SIZE || 0}}px, {{translateY_mobile.SIZE || 0}}px);',
+						],
+					]
+				);
+				$this->end_popover();
+
+
+				$this->start_controls_tabs( 'feed_tabs' );
+					$this->start_controls_tab(
+						'feed_normal',
+						[
+							'label' => esc_html__( 'Normal', 'sina-ext' ),
 						]
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-feed',
-			]
-		);
+					);
+						$this->add_group_control(
+							Group_Control_Background::get_type(),
+							[
+								'name' => 'background',
+								'types' => [ 'classic', 'gradient' ],
+								'selector' => '{{WRAPPER}} .sina-feed',
+							]
+						);
+						$this->add_group_control(
+							Group_Control_Box_Shadow::get_type(),
+							[
+								'name' => 'box_shadow',
+								'selector' => '{{WRAPPER}} .sina-feed',
+							]
+						);
+						$this->add_group_control(
+							Group_Control_Border::get_type(),
+							[
+								'name' => 'box_border',
+								'fields_options' => [
+									'border' => [
+										'default' => 'solid',
+									],
+									'color' => [
+										'default' => '#fafafa',
+									],
+									'width' => [
+										'default' => [
+											'top' => '1',
+											'right' => '1',
+											'bottom' => '1',
+											'left' => '1',
+											'isLinked' => true,
+										]
+									],
+								],
+								'selector' => '{{WRAPPER}} .sina-feed',
+							]
+						);
+					$this->end_controls_tab();
 
-		$this->end_controls_tab();
+					$this->start_controls_tab(
+						'feed_hover',
+						[
+							'label' => esc_html__( 'Hover', 'sina-ext' ),
+						]
+					);
+						$this->add_group_control(
+							Group_Control_Background::get_type(),
+							[
+								'name' => 'hover_background',
+								'types' => [ 'classic', 'gradient' ],
+								'selector' => '{{WRAPPER}} .sina-feed:hover',
+							]
+						);
+						$this->add_control(
+							'box_hover_border',
+							[
+								'label' => esc_html__( 'Border Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed:hover' => 'border-color: {{VALUE}};',
+								],
+							]
+						);
+						$this->add_group_control(
+							Group_Control_Box_Shadow::get_type(),
+							[
+								'name' => 'box_hover_shadow',
+								'selector' => '{{WRAPPER}} .sina-feed:hover',
+							]
+						);
 
-		$this->start_controls_tab(
-			'feed_hover',
-			[
-				'label' => esc_html__( 'Hover', 'sina-ext' ),
-			]
-		);
+						$this->add_control(
+							'feed_hover_page_name_heading',
+							[
+								'label' => esc_html__( 'Account Name Styles', 'sina-ext' ),
+								'type' => Controls_Manager::HEADING,
+							]
+						);
+						$this->add_control(
+							'feed_hover_page_name_color',
+							[
+								'label' => esc_html__( 'Text Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed:hover .sina-feed-page-name a' => 'color: {{VALUE}};',
+								],
+							]
+						);
 
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'hover_background',
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .sina-feed:hover',
-			]
-		);
-		$this->add_control(
-			'box_hover_border',
-			[
-				'label' => esc_html__( 'Border Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed:hover' => 'border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'box_hover_shadow',
-				'selector' => '{{WRAPPER}} .sina-feed:hover',
-			]
-		);
+						$this->add_control(
+							'feed_hover_content_heading',
+							[
+								'label' => esc_html__( 'Content Styles', 'sina-ext' ),
+								'type' => Controls_Manager::HEADING,
+							]
+						);
+						$this->add_control(
+							'feed_hover_content_color',
+							[
+								'label' => esc_html__( 'Text Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed:hover .sina-feed-content' => 'color: {{VALUE}};',
+								],
+							]
+						);
 
-		$this->add_control(
-			'feed_hover_page_name_heading',
-			[
-				'label' => esc_html__( 'Account Name Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'feed_hover_page_name_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed:hover .sina-feed-page-name a' => 'color: {{VALUE}};',
-				],
-			]
-		);
+						$this->add_control(
+							'feed_hover_meta_heading',
+							[
+								'label' => esc_html__( 'Meta Styles', 'sina-ext' ),
+								'type' => Controls_Manager::HEADING,
+							]
+						);
+						$this->add_control(
+							'feed_hover_meta_color',
+							[
+								'label' => esc_html__( 'Text Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed:hover .sina-feed-meta' => 'color: {{VALUE}};',
+								],
+							]
+						);
+					$this->end_controls_tab();
+				$this->end_controls_tabs();
 
-		$this->add_control(
-			'feed_hover_content_heading',
-			[
-				'label' => esc_html__( 'Content Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'feed_hover_content_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed:hover .sina-feed-content' => 'color: {{VALUE}};',
-				],
-			]
-		);
+				$this->add_responsive_control(
+					'box_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'box_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '15',
+							'right' => '15',
+							'bottom' => '15',
+							'left' => '15',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'box_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '10',
+							'right' => '10',
+							'bottom' => '10',
+							'left' => '10',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'alignment',
+					[
+						'label' => esc_html__( 'Alignment', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+							'justify' => [
+								'title' => esc_html__( 'Justify', 'sina-ext' ),
+								'icon' => 'eicon-text-align-justify',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_control(
+					'overlay',
+					[
+						'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
+						'type' => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Background::get_type(),
+					[
+						'name' => 'overlay_bg',
+						'types' => [ 'classic', 'gradient' ],
+						'fields_options' => [
+							'background' => [ 
+								'default' =>'classic', 
+							],
+							'color' => [
+								'default' => 'rgba(0,0,0,0.4)',
+							],
+						],
+						'selector' => '{{WRAPPER}} .sina-feed-thumb .sina-overlay',
+					]
+				);
+				Sina_Common_Data::BG_hover_effects($this, '.sina-feed');
 
-		$this->add_control(
-			'feed_hover_meta_heading',
-			[
-				'label' => esc_html__( 'Meta Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-			]
-		);
-		$this->add_control(
-			'feed_hover_meta_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed:hover .sina-feed-meta' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_responsive_control(
-			'box_radius',
-			[
-				'label' => esc_html__( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'box_padding',
-			[
-				'label' => esc_html__( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '15',
-					'right' => '15',
-					'bottom' => '15',
-					'left' => '15',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'box_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '10',
-					'right' => '10',
-					'bottom' => '10',
-					'left' => '10',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'alignment',
-			[
-				'label' => esc_html__( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'eicon-text-align-right',
-					],
-					'justify' => [
-						'title' => esc_html__( 'Justify', 'sina-ext' ),
-						'icon' => 'eicon-text-align-justify',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'overlay',
-			[
-				'label' => esc_html__( 'Overlay Background', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'overlay_bg',
-				'types' => [ 'classic', 'gradient' ],
-				'fields_options' => [
-					'background' => [ 
-						'default' =>'classic', 
-					],
-					'color' => [
-						'default' => 'rgba(0,0,0,0.4)',
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-feed-thumb .sina-overlay',
-			]
-		);
-		Sina_Common_Data::BG_hover_effects($this, '.sina-feed');
-
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Feed Style
 		// =================
 
 
 		// Start Account Name Style
 		// ======================
-		$this->start_controls_section(
-			'page_name_style',
-			[
-				'label' => esc_html__( 'Account Name', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
+			$this->start_controls_section(
+				'page_name_style',
+				[
+					'label' => esc_html__( 'Account Name', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'page_name_typography',
-				'selector' => '{{WRAPPER}} .sina-feed-page-name a',
-			]
-		);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'page_name_typography',
+						'selector' => '{{WRAPPER}} .sina-feed-page-name a',
+					]
+				);
 
-		$this->start_controls_tabs( 'page_name_tabs' );
+				$this->start_controls_tabs( 'page_name_tabs' );
+					$this->start_controls_tab(
+						'page_name_normal',
+						[
+							'label' => esc_html__( 'Normal', 'sina-ext' ),
+						]
+					);
+						$this->add_control(
+							'page_name_color',
+							[
+								'label' => esc_html__( 'Text Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'default' => '#1085e4',
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed-page-name a' => 'color: {{VALUE}};',
+								],
+							]
+						);
+					$this->end_controls_tab();
 
-		$this->start_controls_tab(
-			'page_name_normal',
-			[
-				'label' => esc_html__( 'Normal', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'page_name_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#1085e4',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-page-name a' => 'color: {{VALUE}};',
-				],
-			]
-		);
+					$this->start_controls_tab(
+						'page_name_hover',
+						[
+							'label' => esc_html__( 'Hover', 'sina-ext' ),
+						]
+					);
+						$this->add_control(
+							'page_name_hover_color',
+							[
+								'label' => esc_html__( 'Text Color', 'sina-ext' ),
+								'type' => Controls_Manager::COLOR,
+								'selectors' => [
+									'{{WRAPPER}} .sina-feed-page-name a:hover' => 'color: {{VALUE}};',
+								],
+							]
+						);
+					$this->end_controls_tab();
+				$this->end_controls_tabs();
 
-		$this->end_controls_tab();
+				$this->add_control(
+					'page_name_heading',
+					[
+						'label' => esc_html__( 'Thumb Styles', 'sina-ext' ),
+						'type' => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_responsive_control(
+					'page_name_logo',
+					[
+						'label' => esc_html__( 'Thumb Size', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'range' => [
+							'px' => [
+								'min' => 16,
+								'max' => 200,
+							],
+						],
+						'default' => [
+							'size' => '32',
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-page-name img' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'page_name_thumb_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-page-name img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'page_name_thumb_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '0',
+							'right' => '5',
+							'bottom' => '0',
+							'left' => '0',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-page-name img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
 
-		$this->start_controls_tab(
-			'page_name_hover',
-			[
-				'label' => esc_html__( 'Hover', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'page_name_hover_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-page-name a:hover' => 'color: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_control(
-			'page_name_heading',
-			[
-				'label' => esc_html__( 'Thumb Styles', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-		$this->add_responsive_control(
-			'page_name_logo',
-			[
-				'label' => esc_html__( 'Thumb Size', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 16,
-						'max' => 200,
-					],
-				],
-				'default' => [
-					'size' => '32',
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-page-name img' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'page_name_thumb_radius',
-			[
-				'label' => esc_html__( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-page-name img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'page_name_thumb_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '0',
-					'right' => '5',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-page-name img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Account Name Style
 		// ====================
 
 
 		// Start Content Style
 		// =====================
-		$this->start_controls_section(
-			'content_style',
-			[
-				'label' => esc_html__( 'Content', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
+			$this->start_controls_section(
+				'content_style',
+				[
+					'label' => esc_html__( 'Content', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
 
-		$this->add_control(
-			'content_color',
-			[
-				'label' => esc_html__( 'Text Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-content' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'content_typography',
-				'selector' => '{{WRAPPER}} .sina-feed-content',
-			]
-		);
-		$this->add_responsive_control(
-			'content_padding',
-			[
-				'label' => esc_html__( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '15',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
+				$this->add_control(
+					'content_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#222',
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-content' => 'color: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'content_typography',
+						'selector' => '{{WRAPPER}} .sina-feed-content',
+					]
+				);
+				$this->add_responsive_control(
+					'content_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '15',
+							'right' => '0',
+							'bottom' => '0',
+							'left' => '0',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Content Style
 		// =====================
 
 
 		// Start Meta Style
 		// =====================
-		$this->start_controls_section(
-			'meta_style',
-			[
-				'label' => esc_html__( 'Meta', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
+			$this->start_controls_section(
+				'meta_style',
+				[
+					'label' => esc_html__( 'Meta', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
 
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			[
-				'name' => 'meta_typography',
-				'fields_options' => [
-					'typography' => [ 
-						'default' =>'custom', 
-					],
-					'font_weight' => [
-						'default' => '400',
-					],
-					'font_size'   => [
-						'default' => [
-							'size' => '14',
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'meta_typography',
+						'fields_options' => [
+							'typography' => [ 
+								'default' =>'custom', 
+							],
+							'font_weight' => [
+								'default' => '400',
+							],
+							'font_size'   => [
+								'default' => [
+									'size' => '14',
+								],
+							],
+							'line_height'   => [
+								'default' => [
+									'size' => '24',
+								],
+							],
 						],
-					],
-					'line_height'   => [
-						'default' => [
-							'size' => '24',
+						'selector' => '{{WRAPPER}} .sina-feed-meta',
+					]
+				);
+				$this->add_control(
+					'meta_color',
+					[
+						'label' => esc_html__( 'Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#222',
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-meta' => 'color: {{VALUE}};',
 						],
-					],
-				],
-				'selector' => '{{WRAPPER}} .sina-feed-meta',
-			]
-		);
-		$this->add_control(
-			'meta_color',
-			[
-				'label' => esc_html__( 'Color', 'sina-ext' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '#222',
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-meta' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'meta_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '15',
-					'right' => '0',
-					'bottom' => '15',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-feed-meta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
+					]
+				);
+				$this->add_responsive_control(
+					'meta_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '15',
+							'right' => '0',
+							'bottom' => '15',
+							'left' => '0',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-feed-meta' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Meta Style
 		// ================
 
 
 		// Start Read More Style
 		// ========================
-		$this->start_controls_section(
-			'read_more_style',
-			[
-				'label' => esc_html__( 'Read More', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-				'condition' => [
-					'read_more_text!' => '',
-				],
-			]
-		);
-		Sina_Common_Data::button_style( $this, '.sina-feed .sina-read-more' );
-		$this->add_responsive_control(
-			'read_more_radius',
-			[
-				'label' => esc_html__( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'read_more_padding',
-			[
-				'label' => esc_html__( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '10',
-					'right' => '20',
-					'bottom' => '10',
-					'left' => '20',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'read_more_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '25',
-					'right' => '0',
-					'bottom' => '0',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
+			$this->start_controls_section(
+				'read_more_style',
+				[
+					'label' => esc_html__( 'Read More', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+					'condition' => [
+						'read_more_text!' => '',
+					],
+				]
+			);
+				Sina_Common_Data::button_style( $this, '.sina-feed .sina-read-more' );
+				$this->add_responsive_control(
+					'read_more_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
+						],
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'read_more_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '4',
+							'right' => '4',
+							'bottom' => '4',
+							'left' => '4',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'read_more_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '10',
+							'right' => '20',
+							'bottom' => '10',
+							'left' => '20',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'read_more_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '25',
+							'right' => '0',
+							'bottom' => '0',
+							'left' => '0',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'btn_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'read_btn_bg_layer');
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Read More Style
 		// =====================
 	}

@@ -121,228 +121,228 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$repeater = new Repeater();
+				$repeater = new Repeater();
 
-			$repeater->add_control(
-				'image',
-				[
-					'label' => esc_html__( 'Choose Image', 'sina-ext' ),
-					'type' => Controls_Manager::MEDIA,
-					'default' => [
-						'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
-					],
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-			$repeater->add_control(
-				'title',
-				[
-					'label' => esc_html__( 'Title', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
-					'default' => 'Welcome',
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-			$repeater->add_control(
-				'title_span',
-				[
-					'label' => esc_html__( 'Title Span', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter Title Span', 'sina-ext' ),
-					'description' => esc_html__( 'You can use SPAN for multi-color title.', 'sina-ext' ),
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-			$repeater->add_control(
-				'title_tag',
-				[
-					'label' => esc_html__( 'Select Tag', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => [
-						'h1' => 'H1',
-						'h2' => 'H2',
-						'h3' => 'H3',
-					],
-					'default' => 'h1',
-				]
-			);
-			$repeater->add_control(
-				'title_anim',
-				[
-					'label' => esc_html__( 'Title Animation', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'fadeInLeft',
-					'options' => Sina_Common_Data::animation(),
-				]
-			);
-			$repeater->add_control(
-				'subtitle',
-				[
-					'label' => esc_html__( 'Sub Title', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
-					'default' => 'Lorem ipsum dolor sit amet',
-					'separator' => 'before',
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-			$repeater->add_control(
-				'subtitle_tag',
-				[
-					'label' => esc_html__( 'Select Tag', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'options' => [
-						'h2' => 'H2',
-						'h3' => 'H3',
-						'h4' => 'H4',
-						'h5' => 'H5',
-						'h6' => 'H6',
-					],
-					'default' => 'h2',
-				]
-			);
-			$repeater->add_control(
-				'subtitle_anim',
-				[
-					'label' => esc_html__( 'Sub Title Animation', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'fadeInRight',
-					'options' => Sina_Common_Data::animation(),
-				]
-			);
-			$repeater->add_control(
-				'desc',
-				[
-					'label' => esc_html__( 'Description', 'sina-ext' ),
-					'type' => Controls_Manager::TEXTAREA,
-					'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
-					'default' => 'Lorem ipsum dolor sit amet',
-					'separator' => 'before',
-					'dynamic' => [
-						'active' => true,
-					],
-				]
-			);
-			$repeater->add_control(
-				'desc_anim',
-				[
-					'label' => esc_html__( 'Description Animation', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'fadeInUp',
-					'options' => Sina_Common_Data::animation(),
-				]
-			);
-			$repeater->add_control(
-				'primary_btn_text',
-				[
-					'label' => esc_html__( 'Primary Button Text', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'options' => Sina_Common_Data::animation(),
-					'separator' => 'before',
-				]
-			);
-			$repeater->add_control(
-				'primary_btn_link',
-				[
-					'label' => esc_html__( 'Link', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'placeholder' => 'https://your-link.com',
-				]
-			);
-			$repeater->add_control(
-				'secondary_btn_text',
-				[
-					'label' => esc_html__( 'Secondary Button Text', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'options' => Sina_Common_Data::animation(),
-					'separator' => 'before',
-				]
-			);
-			$repeater->add_control(
-				'secondary_btn_link',
-				[
-					'label' => esc_html__( 'Link', 'sina-ext' ),
-					'label_block' => true,
-					'type' => Controls_Manager::TEXT,
-					'placeholder' => 'https://your-link.com',
-				]
-			);
-			$repeater->add_control(
-				'buttons_anim',
-				[
-					'label' => esc_html__( 'Buttons Animation', 'sina-ext' ),
-					'type' => Controls_Manager::SELECT,
-					'default' => 'fadeInUp',
-					'options' => Sina_Common_Data::animation(),
-				]
-			);
-			$repeater->add_responsive_control(
-				'alignment',
-				[
-					'label' => esc_html__( 'Alignment', 'sina-ext' ),
-					'type' => Controls_Manager::CHOOSE,
-					'options' => [
-						'left' => [
-							'title' => esc_html__( 'Left', 'sina-ext' ),
-							'icon' => 'eicon-text-align-left',
+				$repeater->add_control(
+					'image',
+					[
+						'label' => esc_html__( 'Choose Image', 'sina-ext' ),
+						'type' => Controls_Manager::MEDIA,
+						'default' => [
+							'url' => SINA_EXT_URL .'assets/img/choose-img.jpg',
 						],
-						'center' => [
-							'title' => esc_html__( 'Center', 'sina-ext' ),
-							'icon' => 'eicon-text-align-center',
+						'dynamic' => [
+							'active' => true,
 						],
-						'right' => [
-							'title' => esc_html__( 'Right', 'sina-ext' ),
-							'icon' => 'eicon-text-align-right',
+					]
+				);
+				$repeater->add_control(
+					'title',
+					[
+						'label' => esc_html__( 'Title', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
+						'default' => 'Welcome',
+						'dynamic' => [
+							'active' => true,
 						],
-					],
-					'default' => 'center',
-					'selectors' => [
-						'{{WRAPPER}} {{CURRENT_ITEM}}' => 'text-align: {{VALUE}};',
-					],
-				]
-			);
+					]
+				);
+				$repeater->add_control(
+					'title_span',
+					[
+						'label' => esc_html__( 'Title Span', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Title Span', 'sina-ext' ),
+						'description' => esc_html__( 'You can use SPAN for multi-color title.', 'sina-ext' ),
+						'dynamic' => [
+							'active' => true,
+						],
+					]
+				);
+				$repeater->add_control(
+					'title_tag',
+					[
+						'label' => esc_html__( 'Select Tag', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'h1' => 'H1',
+							'h2' => 'H2',
+							'h3' => 'H3',
+						],
+						'default' => 'h1',
+					]
+				);
+				$repeater->add_control(
+					'title_anim',
+					[
+						'label' => esc_html__( 'Title Animation', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'default' => 'fadeInLeft',
+						'options' => Sina_Common_Data::animation(),
+					]
+				);
+				$repeater->add_control(
+					'subtitle',
+					[
+						'label' => esc_html__( 'Sub Title', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
+						'default' => 'Lorem ipsum dolor sit amet',
+						'separator' => 'before',
+						'dynamic' => [
+							'active' => true,
+						],
+					]
+				);
+				$repeater->add_control(
+					'subtitle_tag',
+					[
+						'label' => esc_html__( 'Select Tag', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'options' => [
+							'h2' => 'H2',
+							'h3' => 'H3',
+							'h4' => 'H4',
+							'h5' => 'H5',
+							'h6' => 'H6',
+						],
+						'default' => 'h2',
+					]
+				);
+				$repeater->add_control(
+					'subtitle_anim',
+					[
+						'label' => esc_html__( 'Sub Title Animation', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'default' => 'fadeInRight',
+						'options' => Sina_Common_Data::animation(),
+					]
+				);
+				$repeater->add_control(
+					'desc',
+					[
+						'label' => esc_html__( 'Description', 'sina-ext' ),
+						'type' => Controls_Manager::TEXTAREA,
+						'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
+						'default' => 'Lorem ipsum dolor sit amet',
+						'separator' => 'before',
+						'dynamic' => [
+							'active' => true,
+						],
+					]
+				);
+				$repeater->add_control(
+					'desc_anim',
+					[
+						'label' => esc_html__( 'Description Animation', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'default' => 'fadeInUp',
+						'options' => Sina_Common_Data::animation(),
+					]
+				);
+				$repeater->add_control(
+					'primary_btn_text',
+					[
+						'label' => esc_html__( 'Primary Button Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'options' => Sina_Common_Data::animation(),
+						'separator' => 'before',
+					]
+				);
+				$repeater->add_control(
+					'primary_btn_link',
+					[
+						'label' => esc_html__( 'Link', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => 'https://your-link.com',
+					]
+				);
+				$repeater->add_control(
+					'secondary_btn_text',
+					[
+						'label' => esc_html__( 'Secondary Button Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'options' => Sina_Common_Data::animation(),
+						'separator' => 'before',
+					]
+				);
+				$repeater->add_control(
+					'secondary_btn_link',
+					[
+						'label' => esc_html__( 'Link', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => 'https://your-link.com',
+					]
+				);
+				$repeater->add_control(
+					'buttons_anim',
+					[
+						'label' => esc_html__( 'Buttons Animation', 'sina-ext' ),
+						'type' => Controls_Manager::SELECT,
+						'default' => 'fadeInUp',
+						'options' => Sina_Common_Data::animation(),
+					]
+				);
+				$repeater->add_responsive_control(
+					'alignment',
+					[
+						'label' => esc_html__( 'Alignment', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'default' => 'center',
+						'selectors' => [
+							'{{WRAPPER}} {{CURRENT_ITEM}}' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
 
-			$this->add_control(
-				'slides',
-				[
-					'label' => esc_html__( 'Add Slide', 'sina-ext' ),
-					'type' => Controls_Manager::REPEATER,
-					'fields' => $repeater->get_controls(),
-					'default' => [
-						[
-							'title' => 'Welcome to get start your business',
-							'subtitle' => 'Lorem ipsum dolor sit amet',
-							'title_anim' => 'fadeInLeft',
-							'subtitle_anim' => 'fadeInRight',
-							'buttons_anim' => 'fadeInUp',
+				$this->add_control(
+					'slides',
+					[
+						'label' => esc_html__( 'Add Slide', 'sina-ext' ),
+						'type' => Controls_Manager::REPEATER,
+						'fields' => $repeater->get_controls(),
+						'default' => [
+							[
+								'title' => 'Welcome to get start your business',
+								'subtitle' => 'Lorem ipsum dolor sit amet',
+								'title_anim' => 'fadeInLeft',
+								'subtitle_anim' => 'fadeInRight',
+								'buttons_anim' => 'fadeInUp',
+							],
+							[
+								'title' => 'Lorem ipsum dolor sit amet,',
+								'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+								'title_anim' => 'zoomIn',
+								'subtitle_anim' => 'zoomIn',
+								'desc_anim' => 'fadeInUp',
+								'buttons_anim' => 'lightSpeedIn',
+							],
 						],
-						[
-							'title' => 'Lorem ipsum dolor sit amet,',
-							'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-							'title_anim' => 'zoomIn',
-							'subtitle_anim' => 'zoomIn',
-							'desc_anim' => 'fadeInUp',
-							'buttons_anim' => 'lightSpeedIn',
-						],
-					],
-					'title_field' => '{{{ title || subtitle }}}',
-				]
-			);
+						'title_field' => '{{{ title || subtitle }}}',
+					]
+				);
 
 			$this->end_controls_section();
 		// End Slider Content
@@ -405,60 +405,60 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 					'tab' => Controls_Manager::TAB_CONTENT,
 				]
 			);
-			$this->add_control(
-				'overlay',
-				[
-					'label' => esc_html__( 'Overlay', 'sina-ext' ),
-					'type' => Controls_Manager::SWITCHER,
-					'label_on' => esc_html__( 'On', 'sina-ext' ),
-					'label_off' => esc_html__( 'Off', 'sina-ext' ),
-					'default' => 'yes',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Background::get_type(),
-				[
-					'name' => 'overlay_bg',
-					'types' => [ 'classic', 'gradient' ],
-					'fields_options' => [
-						'background' => [ 
-							'default' =>'classic', 
+				$this->add_control(
+					'overlay',
+					[
+						'label' => esc_html__( 'Overlay', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+						'label_on' => esc_html__( 'On', 'sina-ext' ),
+						'label_off' => esc_html__( 'Off', 'sina-ext' ),
+						'default' => 'yes',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Background::get_type(),
+					[
+						'name' => 'overlay_bg',
+						'types' => [ 'classic', 'gradient' ],
+						'fields_options' => [
+							'background' => [ 
+								'default' =>'classic', 
+							],
+							'color' => [
+								'default' => 'rgba(0,0,0,0.5)',
+							],
 						],
-						'color' => [
-							'default' => 'rgba(0,0,0,0.5)',
+						'condition' => [
+							'overlay!' => '',
 						],
-					],
-					'condition' => [
-						'overlay!' => '',
-					],
-					'selector' => '{{WRAPPER}} .sina-slider-content .sina-overlay',
-				]
-			);
-			Sina_Common_Data::carousel_content( $this, true, false );
-			$this->add_control(
-				'part_anim',
-				[
-					'label' => esc_html__( 'Particular Animation', 'sina-ext' ),
-					'type' => Controls_Manager::SWITCHER,
-					'label_on' => esc_html__( 'On', 'sina-ext' ),
-					'label_off' => esc_html__( 'Off', 'sina-ext' ),
-					'default' => 'yes',
-				]
-			);
-			$this->add_control(
-				'slide_speed',
-				[
-					'label' => esc_html__( 'Speed', 'sina-ext' ),
-					'type' => Controls_Manager::NUMBER,
-					'default' => 1000,
-					'step' => 100,
-					'min' => 100,
-					'max' => 5000,
-					'condition' => [
-						'part_anim' => '',
-					],
-				]
-			);
+						'selector' => '{{WRAPPER}} .sina-slider-content .sina-overlay',
+					]
+				);
+				Sina_Common_Data::carousel_content( $this, true, false );
+				$this->add_control(
+					'part_anim',
+					[
+						'label' => esc_html__( 'Particular Animation', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+						'label_on' => esc_html__( 'On', 'sina-ext' ),
+						'label_off' => esc_html__( 'Off', 'sina-ext' ),
+						'default' => 'yes',
+					]
+				);
+				$this->add_control(
+					'slide_speed',
+					[
+						'label' => esc_html__( 'Speed', 'sina-ext' ),
+						'type' => Controls_Manager::NUMBER,
+						'default' => 1000,
+						'step' => 100,
+						'min' => 100,
+						'max' => 5000,
+						'condition' => [
+							'part_anim' => '',
+						],
+					]
+				);
 			$this->end_controls_section();
 		// End Slider Settings
 		// =====================
@@ -474,63 +474,63 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_responsive_control(
-				'container_height',
-				[
-					'label' => esc_html__( 'Height', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em' ],
-					'range' => [
-						'px' => [
-							'max' => 1000,
+				$this->add_responsive_control(
+					'container_height',
+					[
+						'label' => esc_html__( 'Height', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
 						],
-						'em' => [
-							'max' => 50,
+						'default' => [
+							'size' => 600,
 						],
-					],
-					'default' => [
-						'size' => 600,
-					],
-					'tablet_default' => [
-						'size' => 500,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-slider-content' => 'height: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'container_padding',
-				[
-					'label' => esc_html__( 'Padding', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'top' => '200',
-						'right' => '120',
-						'bottom' => '220',
-						'left' => '120',
-						'isLinked' => false,
-					],
-					'tablet_default' => [
-						'top' => '80',
-						'right' => '100',
-						'bottom' => '100',
-						'left' => '100',
-						'isLinked' => false,
-					],
-					'mobile_default' => [
-						'top' => '60',
-						'right' => '20',
-						'bottom' => '60',
-						'left' => '20',
-						'isLinked' => false,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-slider-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
+						'tablet_default' => [
+							'size' => 500,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-slider-content' => 'height: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'container_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '200',
+							'right' => '120',
+							'bottom' => '220',
+							'left' => '120',
+							'isLinked' => false,
+						],
+						'tablet_default' => [
+							'top' => '80',
+							'right' => '100',
+							'bottom' => '100',
+							'left' => '100',
+							'isLinked' => false,
+						],
+						'mobile_default' => [
+							'top' => '60',
+							'right' => '20',
+							'bottom' => '60',
+							'left' => '20',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-slider-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
 
 			$this->end_controls_section();
 		// End Container Style
@@ -547,63 +547,63 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'title_color',
-				[
-					'label' => esc_html__( 'Text Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'default' => '#fafafa',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-title' => 'color: {{VALUE}};',
-					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
-				[
-					'name' => 'title_typography',
-					'fields_options' => [
-						'typography' => [ 
-							'default' =>'custom', 
+				$this->add_control(
+					'title_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#fafafa',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-title' => 'color: {{VALUE}};',
 						],
-						'font_weight' => [
-							'default' => '600',
-						],
-						'font_size'   => [
-							'default' => [
-								'size' => '40',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'title_typography',
+						'fields_options' => [
+							'typography' => [ 
+								'default' =>'custom', 
+							],
+							'font_weight' => [
+								'default' => '600',
+							],
+							'font_size'   => [
+								'default' => [
+									'size' => '40',
+								],
+							],
+							'line_height'   => [
+								'default' => [
+									'size' => '50',
+								],
 							],
 						],
-						'line_height'   => [
-							'default' => [
-								'size' => '50',
-							],
+						'selector' => '{{WRAPPER}} .sina-banner-title',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Text_Shadow::get_type(),
+					[
+						'name' => 'title_shadow',
+						'selector' => '{{WRAPPER}} .sina-banner-title',
+					]
+				);
+				$this->add_responsive_control(
+					'title_margin',
+					[
+						'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'size' => '15',
 						],
-					],
-					'selector' => '{{WRAPPER}} .sina-banner-title',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Text_Shadow::get_type(),
-				[
-					'name' => 'title_shadow',
-					'selector' => '{{WRAPPER}} .sina-banner-title',
-				]
-			);
-			$this->add_responsive_control(
-				'title_margin',
-				[
-					'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'size' => '15',
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-title' => 'margin-bottom: {{size}}{{UNIT}};',
-					],
-				]
-			);
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-title' => 'margin-bottom: {{size}}{{UNIT}};',
+						],
+					]
+				);
 
 			$this->end_controls_section();
 		// End Title Style
@@ -620,31 +620,31 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'title_span_color',
-				[
-					'label' => esc_html__( 'Text Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'default' => '#1085e4',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-title > span' => 'color: {{VALUE}};',
-					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
-				[
-					'name' => 'title_span_typography',
-					'selector' => '{{WRAPPER}} .sina-banner-title > span',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Text_Shadow::get_type(),
-				[
-					'name' => 'title_span_shadow',
-					'selector' => '{{WRAPPER}} .sina-banner-title > span',
-				]
-			);
+				$this->add_control(
+					'title_span_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#1085e4',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-title > span' => 'color: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'title_span_typography',
+						'selector' => '{{WRAPPER}} .sina-banner-title > span',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Text_Shadow::get_type(),
+					[
+						'name' => 'title_span_shadow',
+						'selector' => '{{WRAPPER}} .sina-banner-title > span',
+					]
+				);
 
 			$this->end_controls_section();
 		// End Title Span Style
@@ -661,63 +661,63 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'subtitle_color',
-				[
-					'label' => esc_html__( 'Text Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'default' => '#fafafa',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-subtitle' => 'color: {{VALUE}};',
-					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
-				[
-					'name' => 'subtitle_typography',
-					'fields_options' => [
-						'typography' => [ 
-							'default' =>'custom', 
+				$this->add_control(
+					'subtitle_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#fafafa',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-subtitle' => 'color: {{VALUE}};',
 						],
-						'font_weight' => [
-							'default' => '600',
-						],
-						'font_size'   => [
-							'default' => [
-								'size' => '30',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'subtitle_typography',
+						'fields_options' => [
+							'typography' => [ 
+								'default' =>'custom', 
+							],
+							'font_weight' => [
+								'default' => '600',
+							],
+							'font_size'   => [
+								'default' => [
+									'size' => '30',
+								],
+							],
+							'line_height'   => [
+								'default' => [
+									'size' => '40',
+								],
 							],
 						],
-						'line_height'   => [
-							'default' => [
-								'size' => '40',
-							],
+						'selector' => '{{WRAPPER}} .sina-banner-subtitle',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Text_Shadow::get_type(),
+					[
+						'name' => 'subtitle_shadow',
+						'selector' => '{{WRAPPER}} .sina-banner-subtitle',
+					]
+				);
+				$this->add_responsive_control(
+					'subtitle_margin',
+					[
+						'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'size' => '10',
 						],
-					],
-					'selector' => '{{WRAPPER}} .sina-banner-subtitle',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Text_Shadow::get_type(),
-				[
-					'name' => 'subtitle_shadow',
-					'selector' => '{{WRAPPER}} .sina-banner-subtitle',
-				]
-			);
-			$this->add_responsive_control(
-				'subtitle_margin',
-				[
-					'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'size' => '10',
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-subtitle' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
 
 			$this->end_controls_section();
 		// End Sub Title Style
@@ -734,60 +734,60 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 				]
 			);
 
-			$this->add_control(
-				'desc_color',
-				[
-					'label' => esc_html__( 'Text Color', 'sina-ext' ),
-					'type' => Controls_Manager::COLOR,
-					'default' => '#fafafa',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-desc' => 'color: {{VALUE}};',
-					],
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Typography::get_type(),
-				[
-					'name' => 'desc_typography',
-					'fields_options' => [
-						'typography' => [ 
-							'default' =>'custom', 
+				$this->add_control(
+					'desc_color',
+					[
+						'label' => esc_html__( 'Text Color', 'sina-ext' ),
+						'type' => Controls_Manager::COLOR,
+						'default' => '#fafafa',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-desc' => 'color: {{VALUE}};',
 						],
-						'font_size'   => [
-							'default' => [
-								'size' => '16',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Typography::get_type(),
+					[
+						'name' => 'desc_typography',
+						'fields_options' => [
+							'typography' => [ 
+								'default' =>'custom', 
+							],
+							'font_size'   => [
+								'default' => [
+									'size' => '16',
+								],
+							],
+							'line_height'   => [
+								'default' => [
+									'size' => '24',
+								],
 							],
 						],
-						'line_height'   => [
-							'default' => [
-								'size' => '24',
-							],
+						'selector' => '{{WRAPPER}} .sina-banner-desc',
+					]
+				);
+				$this->add_group_control(
+					Group_Control_Text_Shadow::get_type(),
+					[
+						'name' => 'desc_shadow',
+						'selector' => '{{WRAPPER}} .sina-banner-desc',
+					]
+				);
+				$this->add_responsive_control(
+					'desc_margin',
+					[
+						'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'size' => '40',
 						],
-					],
-					'selector' => '{{WRAPPER}} .sina-banner-desc',
-				]
-			);
-			$this->add_group_control(
-				Group_Control_Text_Shadow::get_type(),
-				[
-					'name' => 'desc_shadow',
-					'selector' => '{{WRAPPER}} .sina-banner-desc',
-				]
-			);
-			$this->add_responsive_control(
-				'desc_margin',
-				[
-					'label' => esc_html__( 'Margin Bottom', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'size' => '40',
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-desc' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-desc' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
 
 			$this->end_controls_section();
 		// End Description Style
@@ -803,82 +803,106 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
-			Sina_Common_Data::button_style( $this, '.sina-banner-pbtn', 'pbtn' );
-			$this->add_responsive_control(
-				'pbtn_width',
-				[
-					'label' => esc_html__( 'Width', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%' ],
-					'range' => [
-						'px' => [
-							'max' => 1000,
+				Sina_Common_Data::button_style( $this, '.sina-banner-pbtn', 'pbtn' );
+				$this->add_responsive_control(
+					'pbtn_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
 						],
-						'em' => [
-							'max' => 50,
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-pbtn' => 'width: {{SIZE}}{{UNIT}};',
 						],
-					],
-					'separator' => 'before',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-pbtn' => 'width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'pbtn_radius',
-				[
-					'label' => esc_html__( 'Radius', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'top' => '4',
-						'right' => '4',
-						'bottom' => '4',
-						'left' => '4',
-						'isLinked' => true,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-pbtn, {{WRAPPER}} .sina-banner-pbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'pbtn_padding',
-				[
-					'label' => esc_html__( 'Padding', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'top' => '12',
-						'right' => '25',
-						'bottom' => '12',
-						'left' => '25',
-						'isLinked' => false,
-					],
-					'mobile_default' => [
-						'top' => '10',
-						'right' => '15',
-						'bottom' => '10',
-						'left' => '15',
-						'isLinked' => false,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-pbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'pbtn_margin',
-				[
-					'label' => esc_html__( 'Margin', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-pbtn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
+					]
+				);
+				$this->add_responsive_control(
+					'pbtn_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '4',
+							'right' => '4',
+							'bottom' => '4',
+							'left' => '4',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-pbtn, {{WRAPPER}} .sina-banner-pbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'pbtn_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '12',
+							'right' => '25',
+							'bottom' => '12',
+							'left' => '25',
+							'isLinked' => false,
+						],
+						'mobile_default' => [
+							'top' => '10',
+							'right' => '15',
+							'bottom' => '10',
+							'left' => '15',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-pbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'pbtn_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-pbtn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'pbtn_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-pbtn' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-pbtn', 'pbtn_bg_layer');
 
 			$this->end_controls_section();
 		// End Primary Button Style
@@ -894,82 +918,106 @@ class Sina_Banner_Slider_Widget extends Widget_Base{
 					'tab' => Controls_Manager::TAB_STYLE,
 				]
 			);
-			Sina_Common_Data::button_style( $this, '.sina-banner-sbtn', 'sbtn' );
-			$this->add_responsive_control(
-				'sbtn_width',
-				[
-					'label' => esc_html__( 'Width', 'sina-ext' ),
-					'type' => Controls_Manager::SLIDER,
-					'size_units' => [ 'px', 'em', '%' ],
-					'range' => [
-						'px' => [
-							'max' => 1000,
+				Sina_Common_Data::button_style( $this, '.sina-banner-sbtn', 'sbtn' );
+				$this->add_responsive_control(
+					'sbtn_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
 						],
-						'em' => [
-							'max' => 50,
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-sbtn' => 'width: {{SIZE}}{{UNIT}};',
 						],
-					],
-					'separator' => 'before',
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-sbtn' => 'width: {{SIZE}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'sbtn_radius',
-				[
-					'label' => esc_html__( 'Radius', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'top' => '4',
-						'right' => '4',
-						'bottom' => '4',
-						'left' => '4',
-						'isLinked' => true,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-sbtn, {{WRAPPER}} .sina-banner-sbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'sbtn_padding',
-				[
-					'label' => esc_html__( 'Padding', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'default' => [
-						'top' => '12',
-						'right' => '25',
-						'bottom' => '12',
-						'left' => '25',
-						'isLinked' => false,
-					],
-					'mobile_default' => [
-						'top' => '10',
-						'right' => '15',
-						'bottom' => '10',
-						'left' => '15',
-						'isLinked' => false,
-					],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-sbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			$this->add_responsive_control(
-				'sbtn_margin',
-				[
-					'label' => esc_html__( 'Margin', 'sina-ext' ),
-					'type' => Controls_Manager::DIMENSIONS,
-					'size_units' => [ 'px', 'em', '%' ],
-					'selectors' => [
-						'{{WRAPPER}} .sina-banner-sbtn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					],
-				]
-			);
-			Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
+					]
+				);
+				$this->add_responsive_control(
+					'sbtn_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '4',
+							'right' => '4',
+							'bottom' => '4',
+							'left' => '4',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-sbtn, {{WRAPPER}} .sina-banner-sbtn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'sbtn_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '12',
+							'right' => '25',
+							'bottom' => '12',
+							'left' => '25',
+							'isLinked' => false,
+						],
+						'mobile_default' => [
+							'top' => '10',
+							'right' => '15',
+							'bottom' => '10',
+							'left' => '15',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-sbtn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'sbtn_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-sbtn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'sbtn_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-banner-sbtn' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				Sina_Common_Data::BG_hover_effects_alt($this, '.sina-banner-sbtn', 'sbtn_bg_layer');
 
 			$this->end_controls_section();
 		// End Secondary Button Style

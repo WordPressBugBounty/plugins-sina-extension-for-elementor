@@ -1222,6 +1222,26 @@ class Sina_Content_Box_Widget extends Widget_Base{
 			);
 			Sina_Common_Data::button_style( $this, '.sina-content-box .sina-read-more' );
 			$this->add_responsive_control(
+				'btn_width',
+				[
+					'label' => esc_html__( 'Width', 'sina-ext' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px', 'em', '%' ],
+					'range' => [
+						'px' => [
+							'max' => 1000,
+						],
+						'em' => [
+							'max' => 50,
+						],
+					],
+					'separator' => 'before',
+					'selectors' => [
+						'{{WRAPPER}} .sina-read-more' => 'width: {{SIZE}}{{UNIT}};',
+					],
+				]
+			);
+			$this->add_responsive_control(
 				'btn_radius',
 				[
 					'label' => esc_html__( 'Radius', 'sina-ext' ),
@@ -1234,7 +1254,6 @@ class Sina_Content_Box_Widget extends Widget_Base{
 						'left' => '4',
 						'isLinked' => true,
 					],
-					'separator' => 'before',
 					'selectors' => [
 						'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					],
@@ -1276,6 +1295,30 @@ class Sina_Content_Box_Widget extends Widget_Base{
 					],
 				]
 			);
+			$this->add_responsive_control(
+				'btn_text_align',
+				[
+					'label' => esc_html__( 'Text Align', 'sina-ext' ),
+					'type' => Controls_Manager::CHOOSE,
+					'options' => [
+						'left' => [
+							'title' => esc_html__( 'Left', 'sina-ext' ),
+							'icon' => 'eicon-text-align-left',
+						],
+						'center' => [
+							'title' => esc_html__( 'Center', 'sina-ext' ),
+							'icon' => 'eicon-text-align-center',
+						],
+						'right' => [
+							'title' => esc_html__( 'Right', 'sina-ext' ),
+							'icon' => 'eicon-text-align-right',
+						],
+					],
+					'selectors' => [
+						'{{WRAPPER}} .sina-read-more' => 'text-align: {{VALUE}};',
+					],
+				]
+			);
 			Sina_Common_Data::BG_hover_effects($this, '.sina-read-more', 'btn_bg_layer');
 
 			$this->end_controls_section();
@@ -1290,17 +1333,6 @@ class Sina_Content_Box_Widget extends Widget_Base{
 		$morphing_anim_icon = ('yes' == $data['is_morphing_anim_icon'] && $data['morphing_pattern']) ? $data['morphing_pattern'] : '';
 		?>
 		<div class="sina-content-box clearfix <?php echo esc_attr( $data['effects'].' '.$data['bg_layer_effects'] ); ?>">
-
-			<?php if ( 'yes' == $data['is_linkable_box'] && $data['link']['url'] ): ?>
-				<a class="sina-content-box-linkable"
-				href="<?php echo esc_url( $data['link']['url'] ); ?>"
-				<?php if ( 'on' == $data['link']['is_external'] ): ?>
-					target="_blank" 
-				<?php endif; ?>
-				<?php if ( 'on' == $data['link']['nofollow'] ): ?>
-					rel="nofollow" 
-				<?php endif; ?>></a>
-			<?php endif; ?>
 
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
@@ -1329,6 +1361,9 @@ class Sina_Content_Box_Widget extends Widget_Base{
 							<h3 class="sina-content-box-title">
 								<?php if ( $data['link']['url'] ): ?>
 									<a href="<?php echo esc_url( $data['link']['url'] ); ?>"
+										<?php if ( 'yes' == $data['is_linkable_box'] ): ?>
+											class="sina-content-box-linkable"
+										<?php endif; ?>
 										<?php if ( 'on' == $data['link']['is_external'] ): ?>
 											target="_blank" 
 										<?php endif; ?>

@@ -1432,15 +1432,15 @@ class Sina_Table_Widget extends Widget_Base{
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'eicon-text-align-left',
+						'icon' => 'eicon-h-align-left',
 					],
 					'center' => [
 						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'eicon-text-align-center',
+						'icon' => 'eicon-h-align-center',
 					],
 					'right' => [
 						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'eicon-text-align-right',
+						'icon' => 'eicon-h-align-right',
 					],
 				],
 				'default' => 'center',

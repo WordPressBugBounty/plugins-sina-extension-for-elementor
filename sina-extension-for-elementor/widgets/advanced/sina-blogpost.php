@@ -1272,6 +1272,26 @@ class Sina_Blogpost_Widget extends Widget_Base{
 			);
 				Sina_Common_Data::button_style( $this, '.sina-bp .sina-read-more' );
 				$this->add_responsive_control(
+					'read_more_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
+						],
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
 					'read_more_radius',
 					[
 						'label' => esc_html__( 'Radius', 'sina-ext' ),
@@ -1284,7 +1304,6 @@ class Sina_Blogpost_Widget extends Widget_Base{
 							'left' => '4',
 							'isLinked' => true,
 						],
-						'separator' => 'before',
 						'selectors' => [
 							'{{WRAPPER}} .sina-read-more, {{WRAPPER}} .sina-read-more:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						],
@@ -1323,6 +1342,30 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						],
 						'selectors' => [
 							'{{WRAPPER}} .sina-read-more' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'read_more_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-read-more' => 'text-align: {{VALUE}};',
 						],
 					]
 				);
@@ -1868,15 +1911,15 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'options' => [
 							'left' => [
 								'title' => esc_html__( 'Left', 'sina-ext' ),
-								'icon' => 'eicon-text-align-left',
+								'icon' => 'eicon-h-align-left',
 							],
 							'center' => [
 								'title' => esc_html__( 'Center', 'sina-ext' ),
-								'icon' => 'eicon-text-align-center',
+								'icon' => 'eicon-h-align-center',
 							],
 							'right' => [
 								'title' => esc_html__( 'Right', 'sina-ext' ),
-								'icon' => 'eicon-text-align-right',
+								'icon' => 'eicon-h-align-right',
 							],
 						],
 						'default' => 'center',
@@ -1905,6 +1948,26 @@ class Sina_Blogpost_Widget extends Widget_Base{
 			);
 				Sina_Common_Data::button_style( $this, '.sina-load-more-btn', 'load_btn' );
 				$this->add_responsive_control(
+					'load_btn_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
+						],
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-load-more-btn' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
 					'load_btn_radius',
 					[
 						'label' => esc_html__( 'Radius', 'sina-ext' ),
@@ -1917,7 +1980,6 @@ class Sina_Blogpost_Widget extends Widget_Base{
 							'left' => '4',
 							'isLinked' => true,
 						],
-						'separator' => 'before',
 						'selectors' => [
 							'{{WRAPPER}} .sina-load-more-btn, {{WRAPPER}} .sina-load-more-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						],
@@ -1967,6 +2029,31 @@ class Sina_Blogpost_Widget extends Widget_Base{
 						'options' => [
 							'left' => [
 								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-h-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'default' => 'center',
+						'selectors' => [
+							'{{WRAPPER}} .sina-load-more' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'load_btn_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
 								'icon' => 'eicon-text-align-left',
 							],
 							'center' => [
@@ -1978,9 +2065,8 @@ class Sina_Blogpost_Widget extends Widget_Base{
 								'icon' => 'eicon-text-align-right',
 							],
 						],
-						'default' => 'center',
 						'selectors' => [
-							'{{WRAPPER}} .sina-load-more' => 'text-align: {{VALUE}};',
+							'{{WRAPPER}} .sina-load-more-btn' => 'text-align: {{VALUE}};',
 						],
 					]
 				);

@@ -3003,7 +3003,7 @@ class Sina_Common_Data{
 						'selectors' => [
 							$selector_inner => 'height: {{SIZE}}{{UNIT}};',
 							$selector_sidebar_pos.'-up' => 'top: -{{SIZE}}{{UNIT}};',
-							'.admin-bar '.$selector_sidebar_pos.'-up' => 'top: calc(-{{SIZE}}{{UNIT}} + 32px);',
+							'.admin-bar '.$selector_sidebar_pos.'-up' => 'top: calc(-{{SIZE}}{{UNIT}} + var(--sina-adminbar));',
 							$selector_sidebar_pos.'-down' => 'bottom: -{{SIZE}}{{UNIT}};',
 						],
 					]

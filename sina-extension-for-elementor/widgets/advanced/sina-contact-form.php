@@ -106,138 +106,138 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 	protected function register_controls() {
 		// Start Name Content
 		// ====================
-		$this->start_controls_section(
-			'form_content',
-			[
-				'label' => esc_html__( 'Form Settings', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
-		);
+			$this->start_controls_section(
+				'form_content',
+				[
+					'label' => esc_html__( 'Form Settings', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_CONTENT,
+				]
+			);
 
-		$this->add_control(
-			'is_recaptcha',
-			[
-				'label' => esc_html__( 'Google Recaptcha', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-			]
-		);
-		$this->add_control(
-			'recaptcha_key',
-			[
-				'label' => 'For add/change the <strong>Site Key</strong> & <strong>Secret Key</strong><br><a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
-				'type' => Controls_Manager::RAW_HTML,
-				'condition' => [
-					'is_recaptcha' => 'yes',
-				],
-			]
-		);
-		$this->add_control(
-			'custom_email',
-			[
-				'label' => esc_html__( 'Use Custom Email', 'sina-ext' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Yes', 'sina-ext' ),
-				'label_off' => esc_html__( 'No', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'contact_email',
-			[
-				'label' => esc_html__( 'Mail To', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Custom Email', 'sina-ext' ),
-				'description' => esc_html__( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
-				'condition' => [
-					'custom_email' => 'yes',
-				],
-				'dynamic' => [
-					'active' => true,
-				],
-			]
-		);
-		$this->add_control(
-			'from_text',
-			[
-				'label' => esc_html__( 'From: ', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter From Address', 'sina-ext' ),
-			]
-		);
-		$this->add_control(
-			'successs_message',
-			[
-				'label' => esc_html__( 'Success Message', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Success Message', 'sina-ext' ),
-				'default' => 'Thanks for sending Email!',
-				'dynamic' => [
-					'active' => true,
-				],
-			]
-		);
-		$this->add_control(
-			'process_text',
-			[
-				'label' => esc_html__( 'Processing Text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Processing Text', 'sina-ext' ),
-				'default' => 'Processing...',
-			]
-		);
-		$this->add_control(
-			'fields',
-			[
-				'label' => esc_html__( 'Fields', 'sina-ext' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-		$this->add_control(
-			'name_placeholder',
-			[
-				'label' => esc_html__( 'Name Placeholder Text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => 'Enter Your Name *',
-			]
-		);
-		$this->add_control(
-			'email_placeholder',
-			[
-				'label' => esc_html__( 'Email Placeholder Text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => 'Enter Your Email *',
-			]
-		);
-		$this->add_control(
-			'sub_placeholder',
-			[
-				'label' => esc_html__( 'Subject Placeholder Text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => 'Enter Your Subject *',
-			]
-		);
-		$this->add_control(
-			'msg_placeholder',
-			[
-				'label' => esc_html__( 'Message Placeholder Text', 'sina-ext' ),
-				'label_block' => true,
-				'type' => Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
-				'default' => 'Enter Your Message *',
-			]
-		);
+				$this->add_control(
+					'is_recaptcha',
+					[
+						'label' => esc_html__( 'Google Recaptcha', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+					]
+				);
+				$this->add_control(
+					'recaptcha_key',
+					[
+						'label' => 'For add/change the <strong>Site Key</strong> & <strong>Secret Key</strong><br><a target="_blank" href="admin.php?page=sina_ext_settings">click here</a>',
+						'type' => Controls_Manager::RAW_HTML,
+						'condition' => [
+							'is_recaptcha' => 'yes',
+						],
+					]
+				);
+				$this->add_control(
+					'custom_email',
+					[
+						'label' => esc_html__( 'Use Custom Email', 'sina-ext' ),
+						'type' => Controls_Manager::SWITCHER,
+						'label_on' => esc_html__( 'Yes', 'sina-ext' ),
+						'label_off' => esc_html__( 'No', 'sina-ext' ),
+					]
+				);
+				$this->add_control(
+					'contact_email',
+					[
+						'label' => esc_html__( 'Mail To', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Custom Email', 'sina-ext' ),
+						'description' => esc_html__( 'If the field is empty or enter an invalid email or try to send email from the editor, then the emails will send to the admin email. This email will work only in the front-end.', 'sina-ext' ),
+						'condition' => [
+							'custom_email' => 'yes',
+						],
+						'dynamic' => [
+							'active' => true,
+						],
+					]
+				);
+				$this->add_control(
+					'from_text',
+					[
+						'label' => esc_html__( 'From: ', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter From Address', 'sina-ext' ),
+					]
+				);
+				$this->add_control(
+					'successs_message',
+					[
+						'label' => esc_html__( 'Success Message', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Success Message', 'sina-ext' ),
+						'default' => 'Thanks for sending Email!',
+						'dynamic' => [
+							'active' => true,
+						],
+					]
+				);
+				$this->add_control(
+					'process_text',
+					[
+						'label' => esc_html__( 'Processing Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Processing Text', 'sina-ext' ),
+						'default' => 'Processing...',
+					]
+				);
+				$this->add_control(
+					'fields',
+					[
+						'label' => esc_html__( 'Fields', 'sina-ext' ),
+						'type' => Controls_Manager::HEADING,
+						'separator' => 'before',
+					]
+				);
+				$this->add_control(
+					'name_placeholder',
+					[
+						'label' => esc_html__( 'Name Placeholder Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
+						'default' => 'Enter Your Name *',
+					]
+				);
+				$this->add_control(
+					'email_placeholder',
+					[
+						'label' => esc_html__( 'Email Placeholder Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
+						'default' => 'Enter Your Email *',
+					]
+				);
+				$this->add_control(
+					'sub_placeholder',
+					[
+						'label' => esc_html__( 'Subject Placeholder Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
+						'default' => 'Enter Your Subject *',
+					]
+				);
+				$this->add_control(
+					'msg_placeholder',
+					[
+						'label' => esc_html__( 'Message Placeholder Text', 'sina-ext' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'placeholder' => esc_html__( 'Enter Placeholder Text', 'sina-ext' ),
+						'default' => 'Enter Your Message *',
+					]
+				);
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Message Content
 		// =====================
 
@@ -448,115 +448,139 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 
 		// Start Button Style
 		// =====================
-		$this->start_controls_section(
-			'btn_style',
-			[
-				'label' => esc_html__( 'Submit Button', 'sina-ext' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-		Sina_Common_Data::button_style( $this, '.sina-contact-btn' );
-		$this->add_responsive_control(
-			'btn_width',
-			[
-				'label' => esc_html__( 'Width', 'sina-ext' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em', '%' ],
-				'range' => [
-					'px' => [
-						'max' => 1000,
-					],
-					'em' => [
-						'max' => 50,
-					],
-				],
-				'separator' => 'before',
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn' => 'width: {{SIZE}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_radius',
-			[
-				'label' => esc_html__( 'Radius', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '4',
-					'right' => '4',
-					'bottom' => '4',
-					'left' => '4',
-					'isLinked' => true,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn, {{WRAPPER}} .sina-contact-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_padding',
-			[
-				'label' => esc_html__( 'Padding', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '13',
-					'right' => '25',
-					'bottom' => '13',
-					'left' => '25',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'btn_margin',
-			[
-				'label' => esc_html__( 'Margin', 'sina-ext' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'default' => [
-					'top' => '20',
-					'right' => '0',
-					'bottom' => '20',
-					'left' => '0',
-					'isLinked' => false,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-		$this->add_responsive_control(
-			'alignment',
-			[
-				'label' => esc_html__( 'Alignment', 'sina-ext' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'sina-ext' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'sina-ext' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'sina-ext' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'selectors' => [
-					'{{WRAPPER}} .sina-contact-form' => 'text-align: {{VALUE}};',
-				],
-			]
-		);
-		Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'btn_bg_layer');
+			$this->start_controls_section(
+				'btn_style',
+				[
+					'label' => esc_html__( 'Submit Button', 'sina-ext' ),
+					'tab' => Controls_Manager::TAB_STYLE,
+				]
+			);
+				Sina_Common_Data::button_style( $this, '.sina-contact-btn' );
+				$this->add_responsive_control(
+					'btn_width',
+					[
+						'label' => esc_html__( 'Width', 'sina-ext' ),
+						'type' => Controls_Manager::SLIDER,
+						'size_units' => [ 'px', 'em', '%' ],
+						'range' => [
+							'px' => [
+								'max' => 1000,
+							],
+							'em' => [
+								'max' => 50,
+							],
+						],
+						'separator' => 'before',
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-btn' => 'width: {{SIZE}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'btn_radius',
+					[
+						'label' => esc_html__( 'Radius', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '4',
+							'right' => '4',
+							'bottom' => '4',
+							'left' => '4',
+							'isLinked' => true,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-btn, {{WRAPPER}} .sina-contact-btn:before' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'btn_padding',
+					[
+						'label' => esc_html__( 'Padding', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '13',
+							'right' => '25',
+							'bottom' => '13',
+							'left' => '25',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'btn_margin',
+					[
+						'label' => esc_html__( 'Margin', 'sina-ext' ),
+						'type' => Controls_Manager::DIMENSIONS,
+						'size_units' => [ 'px', 'em', '%' ],
+						'default' => [
+							'top' => '20',
+							'right' => '0',
+							'bottom' => '20',
+							'left' => '0',
+							'isLinked' => false,
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'alignment',
+					[
+						'label' => esc_html__( 'Alignment', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-h-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-h-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-h-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-form' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				$this->add_responsive_control(
+					'btn_text_align',
+					[
+						'label' => esc_html__( 'Text Align', 'sina-ext' ),
+						'type' => Controls_Manager::CHOOSE,
+						'options' => [
+							'left' => [
+								'title' => esc_html__( 'Left', 'sina-ext' ),
+								'icon' => 'eicon-text-align-left',
+							],
+							'center' => [
+								'title' => esc_html__( 'Center', 'sina-ext' ),
+								'icon' => 'eicon-text-align-center',
+							],
+							'right' => [
+								'title' => esc_html__( 'Right', 'sina-ext' ),
+								'icon' => 'eicon-text-align-right',
+							],
+						],
+						'selectors' => [
+							'{{WRAPPER}} .sina-contact-btn' => 'text-align: {{VALUE}};',
+						],
+					]
+				);
+				Sina_Common_Data::BG_hover_effects($this, '.sina-button', 'btn_bg_layer');
 
-		$this->end_controls_section();
+			$this->end_controls_section();
 		// End Button Style
 		// =====================
 	}

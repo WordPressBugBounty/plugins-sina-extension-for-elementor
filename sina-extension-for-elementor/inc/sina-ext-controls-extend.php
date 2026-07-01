@@ -45,10 +45,13 @@ class Sina_Ext_Controls{
 		add_action('elementor/element/common/_section_style/before_section_end', [$this, 'register_controls']);
 		add_action( 'elementor/widget/render_content', [$this, 'render_content'], 10, 2 );
 		add_action( 'elementor/preview/enqueue_scripts', [ $this, 'preview_scripts' ] );
+
+		add_filter( 'elementor/icons_manager/additional_tabs', [ \Sina_Extension\Sina_Icofont_Icons::class, 'add_icofont_icons_tab' ] );
 	}
 
 	private function controls_files(){
 		require_once SINA_EXT_INC .'controls/icon.php';
+		require_once SINA_EXT_INC .'controls/icofont-icons.php';
 		require_once SINA_EXT_INC .'controls/gradient-text.php';
 	}
 
