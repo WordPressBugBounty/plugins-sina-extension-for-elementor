@@ -280,7 +280,7 @@ class Sina_Site_Info_Widget extends Widget_Base{
 				$copyright = str_replace('{{site_link}}', $this->get_site_link($data, $link), $copyright);
 				?>
 				<p class="sina-site-info-copyright">
-					<?php printf( '%s', $copyright ); ?>
+					<?php echo wp_kses_post( $copyright ); ?>
 				</p>
 			<?php endif; ?>
 		</div><!-- .sina-site-info -->

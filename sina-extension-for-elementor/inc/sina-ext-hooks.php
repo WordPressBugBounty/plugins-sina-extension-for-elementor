@@ -94,7 +94,7 @@ Class Sina_Ext_Hooks{
 					if ( $response['response']['code'] == 200 && $body->status == $status ) {
 						$err = 'success';
 					} else {
-						$err = $body->title.'!';
+						$err = esc_html($body->title).'!';
 					}
 				}
 			}
@@ -237,13 +237,13 @@ Class Sina_Ext_Hooks{
 			$content_length = (int) $data['content_length'];
 
 			$default = [
-				'post_type'			=> $data['post_type'],
-				's'					=> $data['s'],
+				'post_type'			=> sanitize_key($data['post_type']),
+				's'					=> sanitize_text_field($data['s']),
 				'category__in'		=> $data['categories'],
 				'tag__in'			=> $data['tags'],
 				'posts_per_page'	=> (int) $data['posts_num'],
 				'offset'			=> (int) $offset,
-				'orderby'			=> [ $data['order_by'] => $data['sort'] ],
+				'orderby'			=> [ sanitize_key($data['order_by']) => sanitize_key($data['sort']) ],
 				'has_password'		=> false,
 				'post_status'		=> 'publish',
 				'post__not_in'		=> get_option( 'sticky_posts' ),

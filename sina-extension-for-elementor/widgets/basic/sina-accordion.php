@@ -738,7 +738,7 @@ class Sina_Accordion_Widget extends Widget_Base{
 								<i class="<?php echo esc_attr( $data['active_icon']); ?> on"></i>
 							</span>
 						<?php endif ?>
-						<?php printf( '%s', $item['title'] ); ?>
+						<?php echo esc_html( $item['title'] ); ?>
 						<?php if ( 'right' == $data['icon_position']): ?>
 							<span class="sina-accordion-icon">
 								<i class="<?php echo esc_attr( $data['icon']); ?> off"></i>
@@ -754,7 +754,7 @@ class Sina_Accordion_Widget extends Widget_Base{
 							else:
 								?>
 								<div <?php echo $this->get_render_attribute_string( $desc_key ); ?>>
-									<?php printf( '%s', $item['desc'] ); ?>
+									<?php echo wp_kses_post( $item['desc'] ); ?>
 								</div>
 						<?php endif; ?>
 					</div>

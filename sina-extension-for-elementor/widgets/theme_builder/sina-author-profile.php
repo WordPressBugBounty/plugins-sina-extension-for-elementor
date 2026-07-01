@@ -296,7 +296,7 @@ class Sina_Author_Profile_Widget extends Widget_Base{
 						break;
 					case 'bio':
 						$desc = get_the_author_meta('description');
-						printf( '<div class="sina-ap-desc">%1$s</div>', $desc );
+						printf( '<div class="sina-ap-desc">%1$s</div>', wp_kses_post($desc) );
 						break;
 					case 'website':
 						$url = get_the_author_meta('url');

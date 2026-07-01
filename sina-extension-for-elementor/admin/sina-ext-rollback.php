@@ -65,6 +65,10 @@ class Sina_Ext_Rollback{
 	public static function rollback() {
 		check_admin_referer( 'sina_ext_rollback' );
 
+		if ( !current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'You do not have permission.', 'sina-ext' ) );
+		}
+
 		self::apply_package();
 		self::upgrade();
 

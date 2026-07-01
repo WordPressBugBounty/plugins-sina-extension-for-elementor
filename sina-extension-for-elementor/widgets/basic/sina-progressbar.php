@@ -539,7 +539,7 @@ class Sina_Progressbar_Widget extends Widget_Base{
 					<?php if ( $data['icon'] && 'left' == $data['icon_align'] ): ?>
 						<i class="<?php echo esc_attr( $data['icon']); ?> sina-icon-left"></i>
 					<?php endif ?>
-					<?php printf( '%1$s', $data['title'] ); ?>
+					<?php echo wp_kses_post( $data['title']); ?>
 					<?php if ( $data['icon'] && 'right' == $data['icon_align'] ): ?>
 						<i class="<?php echo esc_attr( $data['icon']); ?> sina-icon-right"></i>
 					<?php endif ?>

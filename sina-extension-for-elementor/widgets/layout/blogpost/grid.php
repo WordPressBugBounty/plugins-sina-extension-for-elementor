@@ -71,7 +71,7 @@
 						<?php endif; ?>
 						<?php the_author_posts_link(); ?>
 						|
-						<?php printf( '%s', get_the_date() ); ?>
+						<?php echo esc_html( get_the_date() ); ?>
 					</div>
 				<?php endif; ?>
 			</div>

@@ -1252,7 +1252,7 @@ class Sina_Team_Widget extends Widget_Base{
 
 				<?php if ( $data['desc'] ): ?>
 					<div class="sina-team-desc">
-						<?php printf( '%s', $data['desc'] ); ?>
+						<?php echo wp_kses_post( $data['desc'] ); ?>
 					</div>
 				<?php endif; ?>
 

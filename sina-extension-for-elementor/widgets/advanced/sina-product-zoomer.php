@@ -120,7 +120,6 @@ class Sina_Product_Zoomer_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter Product Title', 'sina-ext' ),
-				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Nice Car',
 				'dynamic' => [
 					'active' => true,
@@ -540,15 +539,15 @@ class Sina_Product_Zoomer_Widget extends Widget_Base{
 								<?php if ( 'on' == $data['link']['nofollow'] ): ?>
 									rel="nofollow" 
 								<?php endif; ?>>
-								<?php printf( '%1$s', $data['title'] ); ?>
+								<?php echo esc_html($data['title']) ?>
 							</a>
 						<?php else: ?>
-							<?php printf( '%1$s', $data['title'] ); ?>
+							<?php echo esc_html($data['title']) ?>
 						<?php endif; ?>
 					</h3>
 				<?php endif; ?>
 				<?php if ( $data['desc'] ): ?>
-					<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+					<div class="sina-product-desc"><?php echo wp_kses_post( $data['desc'] ) ?></div>
 				<?php endif; ?>
 			<?php endif; ?>
 
@@ -583,15 +582,15 @@ class Sina_Product_Zoomer_Widget extends Widget_Base{
 								<?php if ( 'on' == $data['link']['nofollow'] ): ?>
 									rel="nofollow" 
 								<?php endif; ?>>
-								<?php printf( '%1$s', $data['title'] ); ?>
+								<?php echo esc_html($data['title']) ?>
 							</a>
 						<?php else: ?>
-							<?php printf( '%1$s', $data['title'] ); ?>
+							<?php echo esc_html($data['title']) ?>
 						<?php endif; ?>
 					</h3>
 				<?php endif; ?>
 				<?php if ( $data['desc'] ): ?>
-					<?php printf( '<div class="sina-product-desc">%1$s</div>', $data['desc'] ); ?>
+					<div class="sina-product-desc"><?php echo wp_kses_post( $data['desc'] ) ?></div>
 				<?php endif; ?>
 			<?php endif; ?>
 		</div><!-- .sina-image-zoomer -->

@@ -522,7 +522,7 @@ class Sina_Video_Widget extends Widget_Base{
 			<?php endif ?>
 
 			<?php if ( $data['title'] ): ?>
-				<?php printf( '<h3 class="sina-video-title">%1$s</h3>', $data['title'] ); ?>
+				<h3 class="sina-video-title"><?php echo wp_kses_post( $data['title'] ); ?></h3>
 			<?php endif ?>
 		</div><!-- .sina-video -->
 		<?php

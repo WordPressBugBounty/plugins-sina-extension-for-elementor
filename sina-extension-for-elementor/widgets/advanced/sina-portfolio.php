@@ -906,7 +906,7 @@ class Sina_Portfolio_Widget extends Widget_Base{
 					foreach ( $categories as $cat ) :
 						?>
 						<button class="sina-button sina-portfolio-btn <?php echo esc_attr( $data['btn_bg_layer_effects'] ); ?>" data-filter=".<?php echo esc_attr( $cat ); ?>">
-							<?php printf( '%s', str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
+							<?php echo esc_html( str_replace( '_', ' ', trim( $cat, '_') ) ); ?>
 						</button>
 				<?php endforeach; ?>
 			</div>

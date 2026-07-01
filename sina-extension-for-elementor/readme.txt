@@ -1,10 +1,10 @@
 == Sina Extension for Elementor ==
 Contributors: shaonsina
-Tags: elementor, elementor addons, elementor widgets, elementor templates, header footer builder
+Tags: elementor addon, elementor addons, elementor widget, elementor templates, header footer builder
 Requires at least: 4.8
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 3.10.1
+Stable tag: 3.10.2
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -255,6 +255,10 @@ Yes. The free version is available on WordPress.org. A [PRO](https://sina-extens
 
 
 == Changelog ==
+
+= 3.10.2 - 02-07-2026 =
+- Fixed: Escaping issues for some widgets
+- Improved
 
 = 3.10.1 - 01-07-2026 =
 - New: IcoFont icons pack added for all

@@ -464,7 +464,7 @@ class Sina_Piechart_Widget extends Widget_Base{
 						</span>
 					<?php endif; ?>
 					<?php if ( $data['title'] ): ?>
-						<?php printf( '<h3 class="sina-piechart-title">%1$s</h3>', $data['title'] ); ?>
+						<h3 class="sina-piechart-title"><?php echo wp_kses_post( $data['title'] ) ?></h3>
 					<?php endif; ?>
 					<?php if ( 'top' == $data['title_position'] ): ?>
 						<span class="sina-piechart-percent">

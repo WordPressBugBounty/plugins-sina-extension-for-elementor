@@ -127,7 +127,6 @@ class Sina_User_Counter_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter prefix text', 'sina-ext' ),
-				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Already registered',
 				'dynamic' => [
 					'active' => true,
@@ -141,7 +140,6 @@ class Sina_User_Counter_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter suffix text', 'sina-ext' ),
-				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -355,11 +353,11 @@ class Sina_User_Counter_Widget extends Widget_Base{
 		data-roles="<?php echo esc_attr( $data_roles ); ?>">
 			<?php wp_nonce_field( 'sina_user_counter', 'sina_user_counter_nonce' ); ?>
 			<?php if ( $data['prefix'] ): ?>
-				<h3 <?php echo $this->get_render_attribute_string( 'prefix' ); ?>><?php printf( '%s', $data['prefix'] ); ?></h3>
+				<h3 <?php echo $this->get_render_attribute_string( 'prefix' ); ?>><?php echo esc_html( $data['prefix'] ); ?></h3>
 			<?php endif; ?>
-			<span class="sina-uc-number"><?php printf( '%s', $count ); ?></span>
+			<span class="sina-uc-number"><?php echo absint( $count ); ?></span>
 			<?php if ( $data['suffix'] ): ?>
-				<h3 <?php echo $this->get_render_attribute_string( 'suffix' ); ?>><?php printf( '%s', $data['suffix'] ); ?></h3>
+				<h3 <?php echo $this->get_render_attribute_string( 'suffix' ); ?>><?php echo esc_html( $data['suffix'] ); ?></h3>
 			<?php endif; ?>
 		</div><!-- .sina-user-counter -->
 		<?php

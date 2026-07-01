@@ -1698,7 +1698,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 			<?php endif; ?>
 
 			<?php if ( $data['title'] ): ?>
-				<?php printf( '<h3 class="sina-pricing-title">%1$s</h3>', $data['title'] ); ?>
+				<h3 class="sina-pricing-title"><?php echo wp_kses_post( $data['title'] ); ?></h3>
 			<?php endif; ?>
 
 			<?php if ( 'yes' == $data['thumbs'] && 'middle' == $data['img_position'] ): ?>
@@ -1729,7 +1729,7 @@ class Sina_Pricing_Widget extends Widget_Base{
 						<?php if ( $item['icon'] && 'left' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-left"></i>
 						<?php endif; ?>
-						<?php printf( '%1$s', $item['title'] ); ?>
+						<?php echo wp_kses_post( $item['title'] ); ?>
 						<?php if ( $item['icon'] && 'right' == $data['icon_align'] ): ?>
 							<i class="<?php echo esc_attr($item['icon']); ?> sina-icon-right"></i>
 						<?php endif; ?>

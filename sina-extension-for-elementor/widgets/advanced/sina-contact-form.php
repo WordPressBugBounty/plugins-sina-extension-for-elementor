@@ -605,7 +605,7 @@ class Sina_Contact_Form_Widget extends Widget_Base{
 					<?php include SINA_EXT_LAYOUT.'/contact-form/'.$data['form_layout'].'.php'; ?>
 				<?php endif; ?>
 
-				<?php printf('<p class="sina-success-text">%s</p>', esc_html($data['successs_message'])); ?>
+				<p class="sina-success-text"><?php echo esc_html($data['successs_message']) ?></p>
 				<p class="sina-error-text"></p>
 				<p class="sina-process-text"><?php echo esc_html($data['process_text']); ?></p>
 

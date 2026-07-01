@@ -327,7 +327,7 @@ class Sina_Ext_Settings{
 			$key = $key.'['. $field['index'] .']';
 		}
 		$data = sanitize_url( $data );
-		printf('<input class="regular-text" type="text" name="%s" value="%s">', $key, $data);
+		printf('<input class="regular-text" type="text" name="%s" value="%s">', esc_attr($key), $data);
 	}
 
 	public function password_field($field) {
@@ -339,7 +339,7 @@ class Sina_Ext_Settings{
 			$key = $key.'['. $field['index'] .']';
 		}
 		$data = sanitize_text_field( $data );
-		printf('<input class="regular-text" type="password" name="%s" value="%s">', $key, sina_ext_remove_pass_chars($data));
+		printf('<input class="regular-text" type="password" name="%s" value="%s">', esc_attr($key), sina_ext_remove_pass_chars($data));
 	}
 
 	public function templates_option($data) {

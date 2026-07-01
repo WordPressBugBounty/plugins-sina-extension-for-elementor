@@ -1336,7 +1336,7 @@ class Sina_Content_Box_Widget extends Widget_Base{
 
 			<?php if ( $data['ribbon_title'] && $data['ribbon_position'] ): ?>
 				<div class="<?php echo esc_attr( $data['ribbon_position'] ); ?>">
-					<?php printf( '%s', $data['ribbon_title'] ); ?>
+					<?php echo esc_html( $data['ribbon_title'] ); ?>
 				</div>
 			<?php endif; ?>
 
@@ -1370,16 +1370,16 @@ class Sina_Content_Box_Widget extends Widget_Base{
 										<?php if ( 'on' == $data['link']['nofollow'] ): ?>
 											rel="nofollow" 
 										<?php endif; ?>>
-										<?php printf( '%1$s', $data['title'] ); ?>
+										<?php echo wp_kses_post( $data['title']); ?>
 									</a>
 								<?php else: ?>
-									<?php printf( '%1$s', $data['title'] ); ?>
+									<?php echo wp_kses_post( $data['title']); ?>
 								<?php endif; ?>
 							</h3>
 						<?php endif; ?>
 
 						<?php if ( $data['desc'] ): ?>
-							<?php printf( '<div class="sina-content-box-desc">%1$s</div>', $data['desc'] ); ?>
+							<div class="sina-content-box-desc"><?php echo wp_kses_post( $data['desc']); ?></div>
 						<?php endif; ?>
 
 						<?php if ( $data['btn_text'] ): ?>

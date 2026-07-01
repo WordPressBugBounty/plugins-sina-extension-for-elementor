@@ -1689,7 +1689,7 @@ class Sina_Table_Widget extends Widget_Base{
 								<?php if ( $content['icon'] && $content['icon_align'] == 'left' ): ?>
 									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-left"></i>
 								<?php endif; ?>
-								<?php printf( '%s', $content['cell_content'] ); ?>
+								<?php echo wp_kses_post( $content['cell_content'] ); ?>
 								<?php if ( $content['icon'] && $content['icon_align'] == 'right' ): ?>
 									<i class="<?php echo esc_attr($content['icon']); ?> sina-icon-right"></i>
 								<?php endif; ?>

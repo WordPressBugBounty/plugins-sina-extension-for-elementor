@@ -968,7 +968,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 								<?php if ( $cats['icon'] && $data['icon_align'] == 'left' ): ?>
 									<i class="<?php echo esc_attr($cats['icon']); ?> sina-icon-left"></i>
 								<?php endif; ?>
-								<?php printf( '%s', $cats['category'] ); ?>
+								<?php echo esc_html( $cats['category'] ); ?>
 								<?php if ( $cats['icon'] && $data['icon_align'] == 'right' ): ?>
 									<i class="<?php echo esc_attr($cats['icon']); ?> sina-icon-right"></i>
 								<?php endif; ?>
@@ -1067,7 +1067,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o far fa-clock"></span> <?php printf( '%s', get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o far fa-clock"></span> <?php echo esc_html( get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>
@@ -1076,7 +1076,7 @@ class Sina_Posts_Tab_Widget extends Widget_Base{
 														<div class="sina-pt-title">
 															<h3 data-sina-pt="#<?php echo esc_attr( $pid ); ?>"><?php the_title(); ?></h3>
 															<?php if ('yes' == $data['date']): ?>
-																<p><span class="fa fa-clock-o far fa-clock"></span> <?php printf( '%s', get_the_date() ); ?></p>
+																<p><span class="fa fa-clock-o far fa-clock"></span> <?php echo esc_html( get_the_date() ); ?></p>
 															<?php endif ?>
 														</div>
 													</div>

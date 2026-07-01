@@ -118,7 +118,6 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter text', 'sina-ext' ),
-				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Today\'s visit',
 				'dynamic' => [
 					'active' => true,
@@ -132,7 +131,6 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 				'label_block' => true,
 				'type' => Controls_Manager::TEXT,
 				'placeholder' => esc_html__( 'Enter text', 'sina-ext' ),
-				'description' => esc_html__( 'You can use HTML.', 'sina-ext' ),
 				'default' => 'Yesterday\'s visit',
 				'dynamic' => [
 					'active' => true,
@@ -375,10 +373,10 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 			<?php wp_nonce_field( 'sina_visit_counter', 'sina_visit_counter_nonce' ); ?>
 			<?php if ( $data['today'] && 'yes' == $data['position'] ): ?>
 				<div class="sina-today">
-					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( '%s', $data['today'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php echo esc_html( $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
-							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
+							<?php echo absint( $visit_data['sina_visit_today'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>
@@ -386,10 +384,10 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 
 			<?php if ( $data['yesterday'] ): ?>
 				<div class="sina-yesterday">
-					<h3 <?php echo $this->get_render_attribute_string( 'yesterday' ); ?>><?php printf( '%s', $data['yesterday'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'yesterday' ); ?>><?php echo esc_html( $data['yesterday'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_yesterday']) ): ?>
 						<span class="sina-visit-number sina-visit-yesterday">
-							<?php printf( '%s', $visit_data['sina_visit_yesterday'] ); ?>
+							<?php echo absint( $visit_data['sina_visit_yesterday'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>
@@ -397,10 +395,10 @@ class Sina_Visit_Counter_Widget extends Widget_Base{
 
 			<?php if ( $data['today'] && '' == $data['position'] ): ?>
 				<div class="sina-today">
-					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php printf( '%s', $data['today'] ); ?></h3>
+					<h3 <?php echo $this->get_render_attribute_string( 'today' ); ?>><?php echo esc_html( $data['today'] ); ?></h3>
 					<?php if ( isset($visit_data['sina_visit_today']) ): ?>
 						<span class="sina-visit-number sina-visit-today">
-							<?php printf( '%s', $visit_data['sina_visit_today'] ); ?>
+							<?php echo absint( $visit_data['sina_visit_today'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>

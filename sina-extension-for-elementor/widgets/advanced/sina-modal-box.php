@@ -1300,7 +1300,7 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 				<div class="sina-modal-area sina-flex animated <?php echo esc_attr( $data['modal_effects'] ); ?>">
 					<div class="sina-modal-content">
 						<?php if ( $data['modal_header'] ): ?>
-							<?php printf( '<h2 %2$s>%1$s</h2>', $data['modal_header'], $this->get_render_attribute_string( 'modal_header' ) ); ?>
+							<?php printf( '<h2 %2$s>%1$s</h2>', wp_kses_post($data['modal_header']), $this->get_render_attribute_string('modal_header') ); ?>
 						<?php endif; ?>
 						<div class="sina-modal-body">
 							<?php
@@ -1310,11 +1310,11 @@ class Sina_Modal_Box_Widget extends Widget_Base{
 								else:
 							?>
 								<?php if ( $data['title'] ): ?>
-									<?php printf( '<h3 %2$s>%1$s</h3>', $data['title'], $this->get_render_attribute_string( 'title' ) ); ?>
+									<?php printf( '<h3 %2$s>%1$s</h3>', wp_kses_post($data['title']), $this->get_render_attribute_string('title') ); ?>
 								<?php endif; ?>
 
 								<?php if ( $data['desc'] ): ?>
-									<?php printf( '<div %2$s>%1$s</div>', $data['desc'], $this->get_render_attribute_string( 'desc' ) ); ?>
+									<?php printf( '<div %2$s>%1$s</div>', wp_kses_post($data['desc']), $this->get_render_attribute_string('desc') ); ?>
 								<?php endif; ?>
 							<?php endif; ?>
 						</div>

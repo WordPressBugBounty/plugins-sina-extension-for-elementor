@@ -1054,11 +1054,11 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 
 				<div class="sina-flipbox-content">
 					<?php if ( $data['front_title'] ): ?>
-						<?php printf( '<h3 class="sina-flipbox-title">%1$s</h3>', $data['front_title'] ); ?>
+						<h3 class="sina-flipbox-title"><?php echo wp_kses_post($data['front_title']) ?></h3>
 					<?php endif; ?>
 
 					<?php if ( $data['front_desc'] ): ?>
-						<?php printf( '<div class="sina-flipbox-desc">%1$s</div>', $data['front_desc'] ); ?>
+						<div class="sina-flipbox-desc"><?php echo wp_kses_post($data['front_desc']) ?></div>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -1084,16 +1084,16 @@ class Sina_Flip_Box_Widget extends Widget_Base{
 									<?php if ( 'on' == $data['back_link']['nofollow'] ): ?>
 										rel="nofollow" 
 									<?php endif; ?>>
-									<?php printf( '%1$s', $data['back_title'] ); ?>
+									<?php echo wp_kses_post($data['back_title']) ?>
 								</a>
 							<?php else: ?>
-								<?php printf( '%1$s', $data['back_title'] ); ?>
+								<?php echo wp_kses_post($data['back_title']) ?>
 							<?php endif; ?>
 						</h3>
 					<?php endif; ?>
 
 					<?php if ( $data['back_desc'] ): ?>
-						<?php printf( '<div class="sina-flipbox-desc">%1$s</div>', $data['back_desc'] ); ?>
+						<div class="sina-flipbox-desc"><?php echo wp_kses_post($data['back_desc']) ?></div>
 					<?php endif; ?>
 				</div>
 			</div>

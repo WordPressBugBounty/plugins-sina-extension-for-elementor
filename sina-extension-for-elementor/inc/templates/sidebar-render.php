@@ -10,7 +10,7 @@
 		$toggleIcon = $settings['sidebar_toggle_open_icon'];
 		$toggleText = $settings['sidebar_toggle_open_text'];
 
-		$toggleHTML = $toggleIcon ? '<i class="'.$toggleIcon.'"></i>' : ($toggleText ? '<span>'.$toggleText.'</span>' : '<i class="icofont icofont-rounded-'.$reverseIcon[$settings['sidebar_position']].'"></i>');
+		$toggleHTML = $toggleIcon ? '<i class="'.esc_attr($toggleIcon).'"></i>' : ($toggleText ? '<span>'.esc_html($toggleText).'</span>' : '<i class="icofont icofont-rounded-'.esc_attr($reverseIcon[$settings['sidebar_position']]).'"></i>');
 	}
 ?>
 <div id="sina-ext-sidebar-<?php echo esc_attr( $template_id ) ?>" class="sina-ext-sidebar sina-ext-sidebar-<?php echo esc_attr($settings['sidebar_position']); ?>" data-settings='<?php echo wp_json_encode( $settings ); ?>'>

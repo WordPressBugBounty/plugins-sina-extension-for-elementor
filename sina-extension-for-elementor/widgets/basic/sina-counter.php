@@ -639,32 +639,32 @@ class Sina_Counter_Widget extends Widget_Base{
 			<?php endif; ?>
 
 			<?php if ( $data['title'] && 'middle' == $data['title_position']): ?>
-				<?php printf( '<h3 class="sina-counter-title">%1$s</h3>', $data['title'] ); ?>
+				<h3 class="sina-counter-title"><?php echo wp_kses_post( $data['title'] ); ?></h3>
 			<?php endif; ?>
 
 			<?php if ( $data['start_number'] && $data['stop_number'] ): ?>
 				<div class="sina-counter-number-wrap">
 					<?php if ( $data['prefix']): ?>
-						<span class="sina-counter-prefix"><?php printf( '%s', $data['prefix'] ); ?></span>
+						<span class="sina-counter-prefix"><?php echo esc_html( $data['prefix'] ); ?></span>
 					<?php endif; ?>
 
 					<span class="sina-counter-number"
 					data-duration="<?php echo esc_attr($data['speed']); ?>"
 					data-to-value="<?php echo esc_attr($data['stop_number']); ?>"
 					data-delimiter="<?php echo esc_attr($data['delimiter']); ?>">
-						<?php printf( '%s', $data['start_number'] ); ?>
+						<?php echo esc_html( $data['start_number'] ); ?>
 					</span>
 
 					<?php if ( $data['suffix']): ?>
 						<span class="sina-counter-suffix">
-							<?php printf( '%s', $data['suffix'] ); ?>
+							<?php echo esc_html( $data['suffix'] ); ?>
 						</span>
 					<?php endif; ?>
 				</div>
 			<?php endif; ?>
 
 			<?php if ( $data['title'] && 'bottom' == $data['title_position'] ): ?>
-				<?php printf( '<h3 class="sina-counter-title">%1$s</h3>', $data['title'] ); ?>
+				<h3 class="sina-counter-title"><?php echo wp_kses_post( $data['title'] ); ?></h3>
 			<?php endif; ?>
 		</div><!-- .sina-counter -->
 		<?php
