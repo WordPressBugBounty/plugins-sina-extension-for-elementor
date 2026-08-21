@@ -2,13 +2,13 @@
 Contributors: shaonsina
 Tags: elementor addon, elementor addons, elementor widget, elementor templates, header footer builder
 Requires at least: 4.8
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.10.2
+Stable tag: 3.10.3
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
-A collection of advanced features including Header-Footer Builder, Theme Builder, Popup Builder, Sidebar Builder, Shortcode Generator, 58 elements, 100+ free templates and more.
+A collection of advanced features including Header & Footer Builder, Theme Builder, Popup Builder, 58 elements, 100+ free templates and more.
 
 
 == Description ==
@@ -255,6 +255,9 @@ Yes. The free version is available on WordPress.org. A [PRO](https://sina-extens
 
 
 == Changelog ==
+
+= 3.10.3 - 21-08-2026 =
+- Fixed: Some issues
 
 = 3.10.2 - 02-07-2026 =
 - Fixed: Escaping issues for some widgets
