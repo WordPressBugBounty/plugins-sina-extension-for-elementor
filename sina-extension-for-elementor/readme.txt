@@ -4,7 +4,7 @@ Tags: elementor addon, elementor addons, elementor widget, elementor templates, 
 Requires at least: 4.8
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 3.10.3
+Stable tag: 3.10.4
 License: GPL v3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -255,6 +255,10 @@ Yes. The free version is available on WordPress.org. A [PRO](https://sina-extens
 
 
 == Changelog ==
+
+= 3.10.4 - 04-09-2026 =
+- Fixed: Escaping issues for Table widget
+- Improved
 
 = 3.10.3 - 21-08-2026 =
 - Fixed: Some issues

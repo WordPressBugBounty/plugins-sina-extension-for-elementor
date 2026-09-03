@@ -844,7 +844,7 @@ class Sina_Table_Widget extends Widget_Base{
 			[
 				'label' => esc_html__( 'Keep Focus', 'sina-ext' ),
 				'type' => Controls_Manager::SWITCHER,
-				'description' => esc_html__('Whether the rows keep focus?', 'sina-ext'),
+				'description' => esc_html__('Whether the rows keep focus if clicks?', 'sina-ext'),
 			]
 		);
 		$this->add_responsive_control(
@@ -1604,7 +1604,7 @@ class Sina_Table_Widget extends Widget_Base{
 		$table_head = [];
 		foreach ($data['header_content'] as $content) {
 			$table_head[] = [
-				'data' => $content['header_text']
+				'data' => esc_attr($content['header_text'])
 			];
 		}
 
@@ -1613,15 +1613,15 @@ class Sina_Table_Widget extends Widget_Base{
 		$table_info = [
 			'head' 		=> $table_head,
 			'export' 	=> esc_attr($data['data_export']),
-			'ordering' 	=> $data['data_sorting'],
-			'sort_col' 	=> $data['data_sorting_column'],
-			'sort_type'	=> $data['data_sorting_type'],
-			'searching' => $data['data_searching'],
-			'paging' 	=> $data['data_paging'],
-			'pagingType' => $data['data_paging_type'],
-			'info' 		=> $data['data_info'],
+			'ordering' 	=> esc_attr($data['data_sorting']),
+			'sort_col' 	=> esc_attr($data['data_sorting_column']),
+			'sort_type'	=> esc_attr($data['data_sorting_type']),
+			'searching' => esc_attr($data['data_searching']),
+			'paging' 	=> esc_attr($data['data_paging']),
+			'info' 		=> esc_attr($data['data_info']),
+			'keep_focus'=> esc_attr($data['content_keep_focus']),
+			'pagingType' => esc_attr($data['data_paging_type']),
 			'external_source' => esc_url($external_source),
-			'keep_focus'=> $data['content_keep_focus'],
 		];
 
 		$rows = [];
@@ -1712,22 +1712,23 @@ class Sina_Table_Widget extends Widget_Base{
 			var tableHead = [];
 			_.each( settings.header_content, function( content, key ) {
 				var headerText = content.header_text;
-				tableHead.push({ 'data' : headerText });
+				tableHead.push({ 'data' : _.escape(headerText) });
 			});
 
 			var external_source = ( 'external' == settings.data_source && settings.external_source ) ? settings.external_source : '';
 
 			var tableInfo = {
 				'head' : tableHead,
-				'export' : settings.data_export,
-				'ordering' : settings.data_sorting,
-				'sort_col' : settings.data_sorting_column,
-				'sort_type' : settings.data_sorting_type,
-				'searching' : settings.data_searching,
-				'paging' : settings.data_paging,
-				'pagingType' : settings.data_paging_type,
-				'info' : settings.data_info,
-				'external_source' : external_source,
+				'export' : _.escape( settings.data_export ),
+				'ordering' : _.escape( settings.data_sorting ),
+				'sort_col' : _.escape( settings.data_sorting_column ),
+				'sort_type' : _.escape( settings.data_sorting_type ),
+				'searching' : _.escape( settings.data_searching ),
+				'paging' : _.escape( settings.data_paging ),
+				'pagingType' : _.escape( settings.data_paging_type ),
+				'info' : _.escape( settings.data_info ),
+				'keep_focus' : _.escape( settings.content_keep_focus ),
+				'external_source' : _.escape( external_source ),
 			}
 			tableInfo = JSON.stringify(tableInfo);
 
