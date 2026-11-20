@@ -167,8 +167,7 @@ class Sina_Ext_Settings{
 			],
 		];
 
-		add_action( 'admin_menu', [$this, 'add_menu'] );
-		add_action( 'admin_menu', [$this, 'add_submenu'] );
+		add_action( 'admin_menu', [$this, 'add_menu'], 9 );
 		add_action( 'admin_init', [$this, 'settings_group'] );
 		add_action( 'admin_enqueue_scripts', [$this, 'admin_scripts'] );
 	}
@@ -184,6 +183,8 @@ class Sina_Ext_Settings{
 			$menu_icon,
 			58
 		);
+
+		$this->add_submenu();
 	}
 
 	public function add_submenu() {
